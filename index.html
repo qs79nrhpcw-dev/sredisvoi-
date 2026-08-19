@@ -32,7 +32,7 @@ html,body{margin:0;min-height:100%;background:radial-gradient(circle at top left
 body{overflow-x:hidden}.noise{position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px, transparent 1px);background-size:28px 28px;mask-image:linear-gradient(to bottom, #000, transparent 80%)}
 .app{max-width:980px;margin:0 auto;padding:18px 14px 70px;min-height:100vh}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;position:sticky;top:0;z-index:10;padding-top:max(8px, env(safe-area-inset-top));backdrop-filter:blur(16px)}
 .brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:16px;background:linear-gradient(135deg,var(--red),var(--purple));display:grid;place-items:center;box-shadow:0 10px 30px rgba(255,49,88,.25);font-weight:900}.brand h1{font-size:20px;margin:0;letter-spacing:.2px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.avatar{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,49,88,.25),rgba(139,92,246,.25));display:grid;place-items:center;font-weight:800;cursor:pointer;transition:.2s}.avatar:hover,.button:hover,.card:hover{transform:translateY(-1px)}
-.hero{padding:26px;border:1px solid var(--line);border-radius:32px;background:linear-gradient(150deg,rgba(255,255,255,.08),rgba(255,255,255,.025));box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,49,88,.28),transparent 65%)}.hero h2{font-size:34px;margin:0 0 8px;line-height:1.05}.hero p{color:var(--muted);margin:0 0 18px;line-height:1.45}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:var(--radius);background:rgba(17,17,26,.78);padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.22);transition:.2s}.card h3{margin:0 0 8px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.35}.button{appearance:none;border:0;border-radius:18px;padding:14px 16px;background:linear-gradient(135deg,var(--red),var(--purple));color:#fff;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 12px 32px rgba(139,92,246,.2);transition:.2s;text-align:center}.button.secondary{background:rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:none}.button.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--muted)}.button.danger{background:linear-gradient(135deg,#d11140,#7f1d1d)}.button.ok{background:linear-gradient(135deg,#16a34a,#0f766e)}.button:disabled{opacity:.45;cursor:not-allowed;transform:none}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.stack{display:flex;flex-direction:column;gap:12px}.spacer{height:14px}.input,select,textarea{width:100%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:16px;padding:13px 14px;font-size:16px;outline:none}.input:focus,select:focus,textarea:focus{border-color:rgba(139,92,246,.8);box-shadow:0 0 0 4px rgba(139,92,246,.13)}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.07);border-radius:999px;padding:9px 11px;color:var(--muted);font-size:13px}.code{font-size:38px;letter-spacing:8px;font-weight:950;text-align:center;padding:18px;border-radius:22px;background:linear-gradient(135deg,rgba(255,49,88,.16),rgba(139,92,246,.18));border:1px dashed rgba(255,255,255,.25)}.players{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px}.player{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055)}.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 18px var(--ok)}.dot.obs{background:var(--warn);box-shadow:0 0 18px var(--warn)}.dot.out{background:var(--bad);box-shadow:0 0 18px var(--bad)}.muted{color:var(--muted)}.tiny{font-size:12px;color:var(--soft)}.screen{animation:enter .28s ease both}@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.cardReveal{min-height:360px;display:grid;place-items:center;text-align:center;border-radius:32px;border:1px solid var(--line);background:radial-gradient(circle at 50% 0%,rgba(255,49,88,.2),transparent 45%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));position:relative;overflow:hidden}.secretStamp{font-size:13px;letter-spacing:4px;color:var(--red);font-weight:900;text-transform:uppercase}.bigTitle{font-size:38px;font-weight:950;line-height:1.05;margin:12px 0}.timer{font-size:44px;font-weight:950;letter-spacing:1px}.turnBox{border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:16px;background:linear-gradient(135deg,rgba(255,49,88,.12),rgba(139,92,246,.12))}.chat{height:260px;overflow:auto;padding:12px;border-radius:20px;background:rgba(0,0,0,.22);border:1px solid var(--line)}.msg{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}.msg b{color:#fff}.msg span{color:var(--muted)}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:#171725;color:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 14px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:40;max-width:92vw}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px}.tab{white-space:nowrap}.locationList{max-height:310px;overflow:auto;display:grid;gap:8px}.locationItem{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:grid;place-items:end center;padding:14px;z-index:30}.modalInner{width:min(720px,100%);max-height:86vh;overflow:auto;border:1px solid var(--line);background:linear-gradient(180deg,#151521,#09090f);border-radius:28px;padding:18px;box-shadow:var(--shadow);animation:sheet .22s ease both}@keyframes sheet{from{transform:translateY(18px);opacity:0}to{transform:none;opacity:1}}.hidden{display:none!important}.divider{height:1px;background:var(--line);margin:8px 0}.warn{color:var(--warn)}.oktext{color:var(--ok)}.badtext{color:var(--bad)}
+.hero{padding:26px;border:1px solid var(--line);border-radius:32px;background:linear-gradient(150deg,rgba(255,255,255,.08),rgba(255,255,255,.025));box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,49,88,.28),transparent 65%)}.hero h2{font-size:34px;margin:0 0 8px;line-height:1.05}.hero p{color:var(--muted);margin:0 0 18px;line-height:1.45}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:var(--radius);background:rgba(17,17,26,.78);padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.22);transition:.2s}.card h3{margin:0 0 8px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.35}.button{appearance:none;border:0;border-radius:18px;padding:14px 16px;background:linear-gradient(135deg,var(--red),var(--purple));color:#fff;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 12px 32px rgba(139,92,246,.2);transition:.2s;text-align:center}.button.secondary{background:rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:none}.button.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--muted)}.button.danger{background:linear-gradient(135deg,#d11140,#7f1d1d)}.button.ok{background:linear-gradient(135deg,#16a34a,#0f766e)}.button:disabled{opacity:.45;cursor:not-allowed;transform:none}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.stack{display:flex;flex-direction:column;gap:12px}.spacer{height:14px}.input,select,textarea{width:100%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:16px;padding:13px 14px;font-size:16px;outline:none}.input:focus,select:focus,textarea:focus{border-color:rgba(139,92,246,.8);box-shadow:0 0 0 4px rgba(139,92,246,.13)}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.07);border-radius:999px;padding:9px 11px;color:var(--muted);font-size:13px}.code{font-size:38px;letter-spacing:8px;font-weight:950;text-align:center;padding:18px;border-radius:22px;background:linear-gradient(135deg,rgba(255,49,88,.16),rgba(139,92,246,.18));border:1px dashed rgba(255,255,255,.25)}.players{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px}.player{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055)}.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 18px var(--ok)}.dot.obs{background:var(--warn);box-shadow:0 0 18px var(--warn)}.dot.out{background:var(--bad);box-shadow:0 0 18px var(--bad)}.muted{color:var(--muted)}.tiny{font-size:12px;color:var(--soft)}.screen{animation:none}@keyframes enter{from{opacity:1;transform:none}to{opacity:1;transform:none}}.cardReveal{min-height:360px;display:grid;place-items:center;text-align:center;border-radius:32px;border:1px solid var(--line);background:radial-gradient(circle at 50% 0%,rgba(255,49,88,.2),transparent 45%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));position:relative;overflow:hidden}.secretStamp{font-size:13px;letter-spacing:4px;color:var(--red);font-weight:900;text-transform:uppercase}.bigTitle{font-size:38px;font-weight:950;line-height:1.05;margin:12px 0}.timer{font-size:44px;font-weight:950;letter-spacing:1px}.turnBox{border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:16px;background:linear-gradient(135deg,rgba(255,49,88,.12),rgba(139,92,246,.12))}.chat{height:260px;overflow:auto;padding:12px;border-radius:20px;background:rgba(0,0,0,.22);border:1px solid var(--line)}.msg{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}.msg b{color:#fff}.msg span{color:var(--muted)}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:#171725;color:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 14px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:40;max-width:92vw}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px}.tab{white-space:nowrap}.locationList{max-height:310px;overflow:auto;display:grid;gap:8px}.locationItem{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:grid;place-items:end center;padding:14px;z-index:30}.modalInner{width:min(720px,100%);max-height:86vh;overflow:auto;border:1px solid var(--line);background:linear-gradient(180deg,#151521,#09090f);border-radius:28px;padding:18px;box-shadow:var(--shadow);animation:none}@keyframes sheet{from{transform:translateY(18px);opacity:0}to{transform:none;opacity:1}}.hidden{display:none!important}.divider{height:1px;background:var(--line);margin:8px 0}.warn{color:var(--warn)}.oktext{color:var(--ok)}.badtext{color:var(--bad)}
 @media(max-width:720px){.grid,.grid3,.formgrid{grid-template-columns:1fr}.hero{padding:20px}.hero h2{font-size:30px}.bigTitle{font-size:32px}.topbar{margin-bottom:12px}.brand h1{font-size:17px}.brand p{display:none}.app{padding-left:12px;padding-right:12px}.timer{font-size:38px}}
 
   </style>
@@ -1595,6 +1595,1541 @@ const DEFAULT_PACKS = [
         ]
       }
     ]
+  },
+  {
+    "id": "cafe_service",
+    "name": "Кофейня и сервис",
+    "tone": "кофейня, смены и гостевой сервис",
+    "locations": [
+      {
+        "name": "Спешелти-кофейня утром",
+        "roles": [
+          "бариста",
+          "гость",
+          "старший смены",
+          "курьер",
+          "управляющий"
+        ]
+      },
+      {
+        "name": "Кофейня перед закрытием",
+        "roles": [
+          "бариста",
+          "кассир",
+          "постоянный гость",
+          "уборщик",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Кофейная стойка в бизнес-центре",
+        "roles": [
+          "бариста",
+          "офисный работник",
+          "менеджер",
+          "курьер",
+          "техник"
+        ]
+      },
+      {
+        "name": "Обжарочный цех",
+        "roles": [
+          "обжарщик",
+          "каппер",
+          "поставщик",
+          "упаковщик",
+          "владелец"
+        ]
+      },
+      {
+        "name": "Каппинг-комната",
+        "roles": [
+          "каппер",
+          "обжарщик",
+          "бариста",
+          "тренер",
+          "гость"
+        ]
+      },
+      {
+        "name": "Склад сиропов и молока",
+        "roles": [
+          "кладовщик",
+          "водитель",
+          "менеджер закупок",
+          "охранник",
+          "бариста"
+        ]
+      },
+      {
+        "name": "Кофейня в торговом центре",
+        "roles": [
+          "бариста",
+          "кассир",
+          "охранник ТЦ",
+          "гость",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Мобильная кофейня на фестивале",
+        "roles": [
+          "бариста",
+          "фестивальный гость",
+          "организатор",
+          "курьер",
+          "техник"
+        ]
+      },
+      {
+        "name": "Кофейный мастер-класс",
+        "roles": [
+          "тренер",
+          "ученик",
+          "бариста",
+          "фотограф",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Дегустация лимонадов",
+        "roles": [
+          "бармен",
+          "гость",
+          "технолог",
+          "управляющий",
+          "поставщик"
+        ]
+      },
+      {
+        "name": "Кухня десертов",
+        "roles": [
+          "кондитер",
+          "помощник",
+          "бариста",
+          "курьер",
+          "шеф"
+        ]
+      },
+      {
+        "name": "Кофейня на вокзале",
+        "roles": [
+          "бариста",
+          "пассажир",
+          "проводник",
+          "охранник",
+          "кассир"
+        ]
+      },
+      {
+        "name": "Кофейня у университета",
+        "roles": [
+          "студент",
+          "бариста",
+          "преподаватель",
+          "курьер",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Летняя веранда",
+        "roles": [
+          "официант",
+          "гость",
+          "бариста",
+          "хостес",
+          "управляющий"
+        ]
+      },
+      {
+        "name": "Зона выдачи заказов",
+        "roles": [
+          "бариста",
+          "курьер",
+          "гость",
+          "кассир",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Стажировка за баром",
+        "roles": [
+          "стажер",
+          "старший бариста",
+          "гость",
+          "управляющий",
+          "кассир"
+        ]
+      },
+      {
+        "name": "Собеседование бариста",
+        "roles": [
+          "кандидат",
+          "управляющий",
+          "старший бариста",
+          "оператор",
+          "наблюдатель"
+        ]
+      },
+      {
+        "name": "Инвентаризация ночью",
+        "roles": [
+          "управляющий",
+          "кладовщик",
+          "бариста",
+          "охранник",
+          "кассир"
+        ]
+      },
+      {
+        "name": "Кофейня после ревизии",
+        "roles": [
+          "управляющий",
+          "бариста",
+          "бухгалтер",
+          "кассир",
+          "поставщик"
+        ]
+      },
+      {
+        "name": "Бар на мероприятии",
+        "roles": [
+          "бармен",
+          "гость",
+          "организатор",
+          "охрана",
+          "фотограф"
+        ]
+      },
+      {
+        "name": "Матча-бар",
+        "roles": [
+          "бариста",
+          "гость",
+          "чайный мастер",
+          "кассир",
+          "управляющий"
+        ]
+      },
+      {
+        "name": "Чайная комната",
+        "roles": [
+          "чайный мастер",
+          "гость",
+          "бариста",
+          "поставщик",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Кофейня в дождливый вечер",
+        "roles": [
+          "бариста",
+          "постоянный гость",
+          "курьер",
+          "студент",
+          "охранник"
+        ]
+      },
+      {
+        "name": "Пункт самовывоза напитков",
+        "roles": [
+          "кассир",
+          "курьер",
+          "бариста",
+          "клиент",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Кофейный pop-up",
+        "roles": [
+          "бариста",
+          "бренд-менеджер",
+          "гость",
+          "фотограф",
+          "организатор"
+        ]
+      },
+      {
+        "name": "Обучение сервису",
+        "roles": [
+          "тренер",
+          "стажер",
+          "старший смены",
+          "гость",
+          "управляющий"
+        ]
+      },
+      {
+        "name": "Очередь в час пик",
+        "roles": [
+          "бариста",
+          "кассир",
+          "нетерпеливый гость",
+          "курьер",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Кофейня без света",
+        "roles": [
+          "бариста",
+          "электрик",
+          "гость",
+          "управляющий",
+          "охранник"
+        ]
+      },
+      {
+        "name": "Точка на фудкорте",
+        "roles": [
+          "бариста",
+          "повар соседней точки",
+          "гость",
+          "кассир",
+          "менеджер ТЦ"
+        ]
+      },
+      {
+        "name": "Секретное меню",
+        "roles": [
+          "бариста",
+          "постоянный гость",
+          "новичок",
+          "управляющий",
+          "инфлюенсер"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sport_stadium",
+    "name": "Спорт и стадион",
+    "tone": "матчи, тренировки и спортивные закулисья",
+    "locations": [
+      {
+        "name": "Раздевалка перед финалом",
+        "roles": [
+          "капитан",
+          "тренер",
+          "вратарь",
+          "массажист",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Футбольное поле после дождя",
+        "roles": [
+          "судья",
+          "нападающий",
+          "защитник",
+          "тренер",
+          "газонщик"
+        ]
+      },
+      {
+        "name": "VIP-ложа стадиона",
+        "roles": [
+          "владелец клуба",
+          "спонсор",
+          "журналист",
+          "охранник",
+          "гость"
+        ]
+      },
+      {
+        "name": "Пресс-конференция тренера",
+        "roles": [
+          "главный тренер",
+          "журналист",
+          "пресс-атташе",
+          "переводчик",
+          "оператор"
+        ]
+      },
+      {
+        "name": "Трансферный офис клуба",
+        "roles": [
+          "спортдиректор",
+          "агент",
+          "скаут",
+          "юрист",
+          "игрок"
+        ]
+      },
+      {
+        "name": "Академия юных футболистов",
+        "roles": [
+          "тренер академии",
+          "юный игрок",
+          "родитель",
+          "скаут",
+          "врач"
+        ]
+      },
+      {
+        "name": "Тренажерный зал команды",
+        "roles": [
+          "фитнес-тренер",
+          "игрок",
+          "врач",
+          "реабилитолог",
+          "администратор"
+        ]
+      },
+      {
+        "name": "VAR-комната",
+        "roles": [
+          "видеоассистент",
+          "судья",
+          "техник",
+          "наблюдатель",
+          "оператор"
+        ]
+      },
+      {
+        "name": "Комментаторская кабина",
+        "roles": [
+          "комментатор",
+          "аналитик",
+          "звукорежиссер",
+          "статистик",
+          "гость"
+        ]
+      },
+      {
+        "name": "Сектор фанатов",
+        "roles": [
+          "ультрас",
+          "стюард",
+          "барабанщик",
+          "новичок",
+          "полицейский"
+        ]
+      },
+      {
+        "name": "Боксерская раздевалка",
+        "roles": [
+          "боксер",
+          "тренер",
+          "катмен",
+          "менеджер",
+          "врач"
+        ]
+      },
+      {
+        "name": "Октагон перед боем",
+        "roles": [
+          "рефери",
+          "боец",
+          "угловой",
+          "врач",
+          "оператор"
+        ]
+      },
+      {
+        "name": "Баскетбольная площадка",
+        "roles": [
+          "разыгрывающий",
+          "центровой",
+          "тренер",
+          "судья",
+          "болельщик"
+        ]
+      },
+      {
+        "name": "Ледовая арена",
+        "roles": [
+          "хоккеист",
+          "вратарь",
+          "тренер",
+          "судья",
+          "заливщик льда"
+        ]
+      },
+      {
+        "name": "Теннисный корт",
+        "roles": [
+          "теннисист",
+          "судья",
+          "болбой",
+          "тренер",
+          "зритель"
+        ]
+      },
+      {
+        "name": "Пит-стоп автогонок",
+        "roles": [
+          "пилот",
+          "механик",
+          "инженер",
+          "стратег",
+          "репортер"
+        ]
+      },
+      {
+        "name": "Допинг-контроль",
+        "roles": [
+          "спортсмен",
+          "врач",
+          "инспектор",
+          "представитель клуба",
+          "переводчик"
+        ]
+      },
+      {
+        "name": "Медицинский кабинет стадиона",
+        "roles": [
+          "врач",
+          "травмированный игрок",
+          "массажист",
+          "тренер",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Фан-шоп клуба",
+        "roles": [
+          "продавец",
+          "болельщик",
+          "кассир",
+          "охранник",
+          "турист"
+        ]
+      },
+      {
+        "name": "Скаутский просмотр",
+        "roles": [
+          "скаут",
+          "юный игрок",
+          "тренер",
+          "родитель",
+          "агент"
+        ]
+      },
+      {
+        "name": "Зал награждения",
+        "roles": [
+          "чемпион",
+          "ведущий",
+          "фотограф",
+          "спонсор",
+          "организатор"
+        ]
+      },
+      {
+        "name": "Спортбар во время дерби",
+        "roles": [
+          "бармен",
+          "фанат",
+          "охранник",
+          "комментатор",
+          "скептик"
+        ]
+      },
+      {
+        "name": "База сборной",
+        "roles": [
+          "тренер",
+          "игрок",
+          "врач",
+          "администратор",
+          "журналист"
+        ]
+      },
+      {
+        "name": "Судейская комната",
+        "roles": [
+          "главный судья",
+          "ассистент",
+          "инспектор",
+          "техник",
+          "секретарь"
+        ]
+      },
+      {
+        "name": "Скамейка запасных",
+        "roles": [
+          "запасной игрок",
+          "тренер",
+          "врач",
+          "аналитик",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Стадионный туннель",
+        "roles": [
+          "капитан",
+          "маскот",
+          "стюард",
+          "оператор",
+          "судья"
+        ]
+      },
+      {
+        "name": "Зона флеш-интервью",
+        "roles": [
+          "игрок матча",
+          "репортер",
+          "оператор",
+          "пресс-атташе",
+          "переводчик"
+        ]
+      },
+      {
+        "name": "Тренировка вратарей",
+        "roles": [
+          "вратарь",
+          "тренер вратарей",
+          "ассистент",
+          "врач",
+          "молодой игрок"
+        ]
+      },
+      {
+        "name": "Гостевой сектор",
+        "roles": [
+          "болельщик гостей",
+          "стюард",
+          "полицейский",
+          "фотограф",
+          "продавец"
+        ]
+      },
+      {
+        "name": "Комната тактического разбора",
+        "roles": [
+          "тренер",
+          "аналитик",
+          "капитан",
+          "ассистент",
+          "молодой игрок"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school_university",
+    "name": "Школа и универ",
+    "tone": "учёба, аудитории и молодёжные ситуации",
+    "locations": [
+      {
+        "name": "Кабинет директора",
+        "roles": [
+          "директор",
+          "ученик",
+          "родитель",
+          "завуч",
+          "секретарь"
+        ]
+      },
+      {
+        "name": "Школьная столовая",
+        "roles": [
+          "повар",
+          "ученик",
+          "дежурный",
+          "учитель",
+          "кассир"
+        ]
+      },
+      {
+        "name": "Экзаменационная аудитория",
+        "roles": [
+          "экзаменатор",
+          "студент",
+          "наблюдатель",
+          "опоздавший",
+          "техник"
+        ]
+      },
+      {
+        "name": "Университетская лекция",
+        "roles": [
+          "лектор",
+          "староста",
+          "студент",
+          "ассистент",
+          "гость"
+        ]
+      },
+      {
+        "name": "Общежитие ночью",
+        "roles": [
+          "студент",
+          "комендант",
+          "сосед",
+          "дежурный",
+          "гость"
+        ]
+      },
+      {
+        "name": "Библиотека",
+        "roles": [
+          "библиотекарь",
+          "студент",
+          "аспирант",
+          "охранник",
+          "преподаватель"
+        ]
+      },
+      {
+        "name": "Лабораторная работа",
+        "roles": [
+          "преподаватель",
+          "лаборант",
+          "студент",
+          "техник",
+          "староста"
+        ]
+      },
+      {
+        "name": "Школьный спортзал",
+        "roles": [
+          "тренер",
+          "ученик",
+          "капитан команды",
+          "медсестра",
+          "завхоз"
+        ]
+      },
+      {
+        "name": "Репетиция выпускного",
+        "roles": [
+          "ведущий",
+          "выпускник",
+          "классный руководитель",
+          "звукорежиссер",
+          "родитель"
+        ]
+      },
+      {
+        "name": "Актовый зал",
+        "roles": [
+          "директор",
+          "ведущий",
+          "ученик",
+          "техник",
+          "гость"
+        ]
+      },
+      {
+        "name": "Кабинет информатики",
+        "roles": [
+          "учитель",
+          "ученик",
+          "системный администратор",
+          "олимпиадник",
+          "новичок"
+        ]
+      },
+      {
+        "name": "Студсовет",
+        "roles": [
+          "председатель",
+          "активист",
+          "скептик",
+          "секретарь",
+          "куратор"
+        ]
+      },
+      {
+        "name": "Канцелярия колледжа",
+        "roles": [
+          "секретарь",
+          "абитуриент",
+          "родитель",
+          "замдиректора",
+          "курьер"
+        ]
+      },
+      {
+        "name": "Коридор на перемене",
+        "roles": [
+          "ученик",
+          "дежурный учитель",
+          "старшеклассник",
+          "новенький",
+          "охранник"
+        ]
+      },
+      {
+        "name": "Учительская",
+        "roles": [
+          "учитель",
+          "завуч",
+          "психолог",
+          "методист",
+          "стажер"
+        ]
+      },
+      {
+        "name": "Олимпиадный класс",
+        "roles": [
+          "участник",
+          "тренер",
+          "наблюдатель",
+          "организатор",
+          "родитель"
+        ]
+      },
+      {
+        "name": "Приёмная комиссия",
+        "roles": [
+          "абитуриент",
+          "секретарь",
+          "эксперт",
+          "родитель",
+          "представитель вуза"
+        ]
+      },
+      {
+        "name": "Коворкинг университета",
+        "roles": [
+          "студент",
+          "стартапер",
+          "ментор",
+          "администратор",
+          "инвестор"
+        ]
+      },
+      {
+        "name": "Медкабинет школы",
+        "roles": [
+          "медсестра",
+          "ученик",
+          "классный руководитель",
+          "родитель",
+          "завуч"
+        ]
+      },
+      {
+        "name": "Школьная линейка",
+        "roles": [
+          "директор",
+          "ученик",
+          "родитель",
+          "учитель",
+          "фотограф"
+        ]
+      },
+      {
+        "name": "Зачёт у строгого преподавателя",
+        "roles": [
+          "преподаватель",
+          "студент",
+          "староста",
+          "ассистент",
+          "пересдающий"
+        ]
+      },
+      {
+        "name": "Кафе у кампуса",
+        "roles": [
+          "бариста",
+          "студент",
+          "преподаватель",
+          "курьер",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Студенческий театр",
+        "roles": [
+          "режиссер",
+          "актер",
+          "осветитель",
+          "зритель",
+          "костюмер"
+        ]
+      },
+      {
+        "name": "Архив университета",
+        "roles": [
+          "архивариус",
+          "студент",
+          "преподаватель",
+          "охранник",
+          "исследователь"
+        ]
+      },
+      {
+        "name": "Школьная экскурсия",
+        "roles": [
+          "экскурсовод",
+          "ученик",
+          "учитель",
+          "родитель",
+          "водитель"
+        ]
+      },
+      {
+        "name": "Пара по физкультуре",
+        "roles": [
+          "преподаватель",
+          "студент",
+          "капитан",
+          "медик",
+          "освобожденный"
+        ]
+      },
+      {
+        "name": "Комната подготовки проекта",
+        "roles": [
+          "тимлид",
+          "дизайнер",
+          "докладчик",
+          "аналитик",
+          "преподаватель"
+        ]
+      },
+      {
+        "name": "Вахта учебного корпуса",
+        "roles": [
+          "вахтер",
+          "студент",
+          "преподаватель",
+          "курьер",
+          "охранник"
+        ]
+      },
+      {
+        "name": "Класс после контрольной",
+        "roles": [
+          "учитель",
+          "отличник",
+          "двоечник",
+          "староста",
+          "новенький"
+        ]
+      },
+      {
+        "name": "Выпускной бал",
+        "roles": [
+          "выпускник",
+          "ведущий",
+          "фотограф",
+          "родитель",
+          "диджей"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "horror_mystic",
+    "name": "Хоррор и мистика",
+    "tone": "страшные места, тайны и напряжение",
+    "locations": [
+      {
+        "name": "Заброшенный санаторий",
+        "roles": [
+          "сталкер",
+          "врач-призрак",
+          "охранник",
+          "журналист",
+          "проводник"
+        ]
+      },
+      {
+        "name": "Дом с заколоченными окнами",
+        "roles": [
+          "новый владелец",
+          "сосед",
+          "экзорцист",
+          "полицейский",
+          "ребенок"
+        ]
+      },
+      {
+        "name": "Лесная хижина ночью",
+        "roles": [
+          "турист",
+          "охотник",
+          "лесник",
+          "раненый",
+          "незнакомец"
+        ]
+      },
+      {
+        "name": "Старое кладбище",
+        "roles": [
+          "смотритель",
+          "родственник",
+          "священник",
+          "журналист",
+          "копатель"
+        ]
+      },
+      {
+        "name": "Отель с закрытым этажом",
+        "roles": [
+          "администратор",
+          "постоялец",
+          "горничная",
+          "детектив",
+          "лифтер"
+        ]
+      },
+      {
+        "name": "Кукольная мастерская",
+        "roles": [
+          "мастер",
+          "коллекционер",
+          "ребенок",
+          "охранник",
+          "покупатель"
+        ]
+      },
+      {
+        "name": "Комната спиритического сеанса",
+        "roles": [
+          "медиум",
+          "скептик",
+          "богатый гость",
+          "ассистент",
+          "журналист"
+        ]
+      },
+      {
+        "name": "Заброшенная церковь",
+        "roles": [
+          "священник",
+          "турист",
+          "реставратор",
+          "местный житель",
+          "охранник"
+        ]
+      },
+      {
+        "name": "Психиатрическая клиника",
+        "roles": [
+          "психиатр",
+          "пациент",
+          "санитар",
+          "родственник",
+          "детектив"
+        ]
+      },
+      {
+        "name": "Лифт между этажами",
+        "roles": [
+          "офисный работник",
+          "техник",
+          "курьер",
+          "охранник",
+          "незнакомец"
+        ]
+      },
+      {
+        "name": "Подвал старого дома",
+        "roles": [
+          "арендатор",
+          "сантехник",
+          "сосед",
+          "полицейский",
+          "хозяин"
+        ]
+      },
+      {
+        "name": "Проклятый театр",
+        "roles": [
+          "актер",
+          "режиссер",
+          "осветитель",
+          "зритель",
+          "призрак сцены"
+        ]
+      },
+      {
+        "name": "Туманная дорога",
+        "roles": [
+          "водитель",
+          "автостопщик",
+          "полицейский",
+          "механик",
+          "пассажир"
+        ]
+      },
+      {
+        "name": "Музей восковых фигур",
+        "roles": [
+          "смотритель",
+          "турист",
+          "реставратор",
+          "охранник",
+          "экскурсовод"
+        ]
+      },
+      {
+        "name": "Чёрный карнавал",
+        "roles": [
+          "фокусник",
+          "клоун",
+          "зритель",
+          "кассир",
+          "укротитель"
+        ]
+      },
+      {
+        "name": "Палата без номера",
+        "roles": [
+          "медсестра",
+          "пациент",
+          "врач",
+          "санитар",
+          "посетитель"
+        ]
+      },
+      {
+        "name": "Старинная библиотека",
+        "roles": [
+          "библиотекарь",
+          "исследователь",
+          "студент",
+          "охранник",
+          "переводчик"
+        ]
+      },
+      {
+        "name": "Заброшенный детский лагерь",
+        "roles": [
+          "вожатый",
+          "турист",
+          "полицейский",
+          "местный",
+          "фотограф"
+        ]
+      },
+      {
+        "name": "Подземный тоннель",
+        "roles": [
+          "диггер",
+          "инженер",
+          "охранник",
+          "журналист",
+          "потерявшийся"
+        ]
+      },
+      {
+        "name": "Квартира с зеркалом",
+        "roles": [
+          "арендатор",
+          "сосед",
+          "риелтор",
+          "экстрасенс",
+          "полицейский"
+        ]
+      },
+      {
+        "name": "Лесной круг камней",
+        "roles": [
+          "археолог",
+          "турист",
+          "местный старик",
+          "журналист",
+          "проводник"
+        ]
+      },
+      {
+        "name": "Звонок из пустой комнаты",
+        "roles": [
+          "диспетчер",
+          "полицейский",
+          "сосед",
+          "техник",
+          "хозяин"
+        ]
+      },
+      {
+        "name": "Проклятая киностудия",
+        "roles": [
+          "режиссер",
+          "актёр",
+          "гример",
+          "оператор",
+          "ночной сторож"
+        ]
+      },
+      {
+        "name": "Запертый чердак",
+        "roles": [
+          "владелец дома",
+          "ребёнок",
+          "ремонтник",
+          "сосед",
+          "детектив"
+        ]
+      },
+      {
+        "name": "Лаборатория после эксперимента",
+        "roles": [
+          "учёный",
+          "лаборант",
+          "охранник",
+          "выживший",
+          "инспектор"
+        ]
+      },
+      {
+        "name": "Озеро без отражения",
+        "roles": [
+          "рыбак",
+          "турист",
+          "спасатель",
+          "местный житель",
+          "фотограф"
+        ]
+      },
+      {
+        "name": "Последний поезд метро",
+        "roles": [
+          "машинист",
+          "пассажир",
+          "контролёр",
+          "охранник",
+          "музыкант"
+        ]
+      },
+      {
+        "name": "Радиостанция в глуши",
+        "roles": [
+          "радист",
+          "техник",
+          "ведущий",
+          "слушатель",
+          "лесник"
+        ]
+      },
+      {
+        "name": "Домик смотрителя маяка",
+        "roles": [
+          "смотритель",
+          "моряк",
+          "турист",
+          "метеоролог",
+          "спасатель"
+        ]
+      },
+      {
+        "name": "Секретный морг",
+        "roles": [
+          "патологоанатом",
+          "санитар",
+          "детектив",
+          "родственник",
+          "охранник"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fun_chaos",
+    "name": "Смешной хаос",
+    "tone": "абсурдные ситуации для весёлой компании",
+    "locations": [
+      {
+        "name": "Очередь за шаурмой в три ночи",
+        "roles": [
+          "продавец",
+          "голодный студент",
+          "таксист",
+          "спорщик",
+          "случайный прохожий"
+        ]
+      },
+      {
+        "name": "Семейный праздник с тостами",
+        "roles": [
+          "тамада",
+          "двоюродный брат",
+          "бабушка",
+          "фотограф",
+          "опоздавший гость"
+        ]
+      },
+      {
+        "name": "Караоке без голоса",
+        "roles": [
+          "ведущий",
+          "стеснительный певец",
+          "бармен",
+          "фанат",
+          "соседний стол"
+        ]
+      },
+      {
+        "name": "Лифт с курьером и пиццей",
+        "roles": [
+          "курьер",
+          "жилец",
+          "консьерж",
+          "ремонтник",
+          "голодный сосед"
+        ]
+      },
+      {
+        "name": "Салон красоты перед свадьбой",
+        "roles": [
+          "визажист",
+          "невеста",
+          "подруга",
+          "мастер маникюра",
+          "администратор"
+        ]
+      },
+      {
+        "name": "Рынок в день скидок",
+        "roles": [
+          "продавец",
+          "покупатель",
+          "торговец специями",
+          "охранник",
+          "перекупщик"
+        ]
+      },
+      {
+        "name": "Квартира после вечеринки",
+        "roles": [
+          "хозяин",
+          "сосед",
+          "диджей",
+          "уборщик",
+          "потерявший телефон"
+        ]
+      },
+      {
+        "name": "Репетиция плохой группы",
+        "roles": [
+          "вокалист",
+          "гитарист",
+          "барабанщик",
+          "звукарь",
+          "менеджер"
+        ]
+      },
+      {
+        "name": "Переезд без грузчиков",
+        "roles": [
+          "хозяин",
+          "друг с машиной",
+          "сосед",
+          "курьер",
+          "человек с диваном"
+        ]
+      },
+      {
+        "name": "Чат дома в подъезде",
+        "roles": [
+          "старший по дому",
+          "сосед",
+          "курьер",
+          "консьерж",
+          "жалобщик"
+        ]
+      },
+      {
+        "name": "Свадьба во время дождя",
+        "roles": [
+          "жених",
+          "невеста",
+          "фотограф",
+          "тамада",
+          "гость без зонта"
+        ]
+      },
+      {
+        "name": "Пикник с потерянным мангалом",
+        "roles": [
+          "организатор",
+          "повар",
+          "друг с углями",
+          "опоздавший",
+          "сосед по поляне"
+        ]
+      },
+      {
+        "name": "Магазин костюмов",
+        "roles": [
+          "продавец",
+          "аниматор",
+          "покупатель",
+          "ребёнок",
+          "курьер"
+        ]
+      },
+      {
+        "name": "Детский день рождения",
+        "roles": [
+          "аниматор",
+          "родитель",
+          "ребёнок",
+          "фотограф",
+          "человек в костюме"
+        ]
+      },
+      {
+        "name": "Автобус с громкой музыкой",
+        "roles": [
+          "водитель",
+          "пассажир",
+          "контролёр",
+          "школьник",
+          "турист"
+        ]
+      },
+      {
+        "name": "Пункт выдачи с потерянным заказом",
+        "roles": [
+          "сотрудник",
+          "клиент",
+          "курьер",
+          "администратор",
+          "человек из очереди"
+        ]
+      },
+      {
+        "name": "Баня с серьёзными переговорами",
+        "roles": [
+          "банщик",
+          "бизнесмен",
+          "друг",
+          "массажист",
+          "случайный знакомый"
+        ]
+      },
+      {
+        "name": "Зоомагазин с попугаем",
+        "roles": [
+          "продавец",
+          "покупатель",
+          "ветеринар",
+          "ребёнок",
+          "поставщик"
+        ]
+      },
+      {
+        "name": "Съёмка рекламы лимонада",
+        "roles": [
+          "режиссёр",
+          "актёр",
+          "оператор",
+          "стилист",
+          "бренд-менеджер"
+        ]
+      },
+      {
+        "name": "Офисный тимбилдинг",
+        "roles": [
+          "руководитель",
+          "новичок",
+          "HR",
+          "скептик",
+          "ведущий"
+        ]
+      },
+      {
+        "name": "Барахолка в гараже",
+        "roles": [
+          "продавец",
+          "коллекционер",
+          "сосед",
+          "перекупщик",
+          "дедушка"
+        ]
+      },
+      {
+        "name": "Сломанный банкомат",
+        "roles": [
+          "клиент",
+          "охранник",
+          "техник",
+          "кассир",
+          "нервный прохожий"
+        ]
+      },
+      {
+        "name": "Пробка у моря",
+        "roles": [
+          "водитель",
+          "пассажир",
+          "продавец кукурузы",
+          "инспектор",
+          "турист"
+        ]
+      },
+      {
+        "name": "Спор у домофона",
+        "roles": [
+          "жилец",
+          "курьер",
+          "консьерж",
+          "сосед",
+          "мастер"
+        ]
+      },
+      {
+        "name": "Фудкорт после школы",
+        "roles": [
+          "школьник",
+          "кассир",
+          "охранник",
+          "повар",
+          "родитель"
+        ]
+      },
+      {
+        "name": "Кухня коммуналки",
+        "roles": [
+          "сосед",
+          "новый жилец",
+          "хозяин кастрюли",
+          "гость",
+          "староста дома"
+        ]
+      },
+      {
+        "name": "Фотосессия с котом",
+        "roles": [
+          "фотограф",
+          "хозяин кота",
+          "ассистент",
+          "стилист",
+          "сосед"
+        ]
+      },
+      {
+        "name": "Квест-комната для новичков",
+        "roles": [
+          "администратор",
+          "игрок",
+          "подсказчик",
+          "актёр",
+          "капитан команды"
+        ]
+      },
+      {
+        "name": "Очередь в МФЦ",
+        "roles": [
+          "администратор",
+          "посетитель",
+          "охранник",
+          "специалист",
+          "человек с талоном"
+        ]
+      },
+      {
+        "name": "Дворовый турнир по домино",
+        "roles": [
+          "дедушка",
+          "сосед",
+          "зритель",
+          "новичок",
+          "спорщик"
+        ]
+      }
+    ]
   }
 ];
 const STORAGE = {
@@ -1628,6 +3163,23 @@ const state = {
 };
 
 let F = {};
+let renderQueued = false;
+let lastRenderedHTML = '';
+
+function scheduleRender(){
+  if(renderQueued) return;
+  renderQueued = true;
+  requestAnimationFrame(()=>{
+    renderQueued = false;
+    render();
+  });
+}
+
+function paint(html){
+  if(html === lastRenderedHTML) return;
+  app.innerHTML = html;
+  lastRenderedHTML = html;
+}
 
 function loadJSON(key, fallback){ try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }}
 function saveJSON(key, value){ localStorage.setItem(key, JSON.stringify(value)); }
@@ -1645,6 +3197,17 @@ function isHost(){ return state.room && state.room.hostId === state.userId; }
 function activePlayers(){ return state.players.filter(p=>p.status !== 'observer' && p.status !== 'left'); }
 function alivePlayers(){ return activePlayers().filter(p=>!(state.room?.eliminatedSpyIds||[]).includes(p.id)); }
 function assignmentFor(id=state.userId){ return state.room?.assignments?.[id]; }
+function cardReadyMap(){ return state.room?.cardReady || {}; }
+function isCardReady(id=state.userId){ return !!cardReadyMap()[id]; }
+function cardReadyCount(){
+  const ready = cardReadyMap();
+  return activePlayers().filter(p=>ready[p.id]).length;
+}
+function everybodyCardReady(){
+  const players = activePlayers();
+  const ready = cardReadyMap();
+  return players.length > 0 && players.every(p=>ready[p.id]);
+}
 
 async function boot(){
   setupTelegram();
@@ -1716,7 +3279,10 @@ function topbar(){
 }
 
 function render(){
-  if(!state.ready){ app.innerHTML = `<div class="hero"><h2>Загрузка...</h2></div>`; return; }
+  if(!state.ready){
+    paint(`<div class="hero"><h2>Загрузка...</h2></div>`);
+    return;
+  }
   let body = '';
   if(state.screen === 'home') body = homeScreen();
   if(state.screen === 'profile') body = profileScreen();
@@ -1728,7 +3294,7 @@ function render(){
   if(state.screen === 'play') body = playScreen();
   if(state.screen === 'vote') body = voteScreen();
   if(state.screen === 'results') body = resultsScreen();
-  app.innerHTML = topbar() + `<div class="screen">${body}</div>` + modalHTML();
+  paint(topbar() + `<div class="screen">${body}</div>` + modalHTML());
 }
 
 function homeScreen(){
@@ -1745,7 +3311,7 @@ function homeScreen(){
   </section>
   <div class="spacer"></div>
   <div class="grid3">
-    <div class="card"><h3>5 наборов</h3><p>По 30 локаций и 5 ролей в каждой. Можно добавлять свои наборы.</p></div>
+    <div class="card"><h3>10 наборов</h3><p>По 30 локаций и 5 ролей в каждой. Можно добавлять свои наборы.</p></div>
     <div class="card"><h3>Гибкие правила</h3><p>Шпионы, роли, фейковая роль, таймер, голосование и режим ведущего.</p></div>
     <div class="card"><h3>Профиль</h3><p>Имя, аватар, локальная статистика и история побед на устройстве.</p></div>
   </div>`;
@@ -1766,14 +3332,32 @@ function profileScreen(){
 }
 
 function rulesScreen(){
-  return `<div class="card"><h3>Правила</h3>
-    <p>Все игроки, кроме шпионов, знают локацию. Если роли включены, каждый получает ещё роль. Шпион видит только статус шпиона, а в отдельном режиме может получить фейковую роль.</p>
-    <div class="divider"></div>
-    <p><b>Ход:</b> первый игрок выбирается случайно, дальше вопросы идут по кругу. Нельзя называть локацию напрямую.</p>
-    <p><b>Победа обычных игроков:</b> на голосовании вычислили всех шпионов.</p>
-    <p><b>Победа шпиона:</b> он угадал локацию или на голосовании выбрали не того.</p>
-    <p><b>Подключение после старта:</b> игрок становится наблюдателем до конца раунда.</p>
-    <div class="spacer"></div><button class="button secondary" data-action="home">Назад</button>
+  return `<div class="stack">
+    <div class="card"><h3>Правила</h3>
+      <p>Все игроки, кроме шпионов, знают локацию. Если роли включены, каждый получает ещё роль. Шпион видит только статус шпиона, а в отдельном режиме может получить фейковую роль.</p>
+      <div class="divider"></div>
+      <p><b>Ход:</b> сначала каждый смотрит свою карту и нажимает «Я готов». Раунд можно начать только после готовности всех активных игроков. Первый игрок выбирается случайно, дальше вопросы идут по кругу. Нельзя называть локацию напрямую.</p>
+      <p><b>Победа обычных игроков:</b> на голосовании вычислили всех шпионов.</p>
+      <p><b>Победа шпиона:</b> он угадал локацию или на голосовании выбрали не того.</p>
+      <p><b>Подключение после старта:</b> новый игрок становится наблюдателем до конца раунда.</p>
+    </div>
+
+    <div class="card"><h3>Режимы игры</h3>
+      <p><b>Обычный:</b> классический «Шпион». Мирные знают локацию, шпион не знает. Подходит для первых игр и быстрых партий.</p>
+      <div class="divider"></div>
+      <p><b>Сложный:</b> игра становится более аккуратной: наборы и локации похожи по атмосфере, роли важнее, а прямые ответы легче выдают игроков. Этот режим лучше включать с ролями и фейковой ролью для шпиона.</p>
+      <div class="divider"></div>
+      <p><b>Предатель:</b> будущий режим. Один игрок знает локацию, но играет против мирных и старается помочь шпиону запутать остальных.</p>
+      <div class="divider"></div>
+      <p><b>Шпион знает категорию:</b> будущий режим. Шпион не знает точную локацию, но знает общую тему набора, например «ночной город», «спорт» или «хоррор».</p>
+    </div>
+
+    <div class="card"><h3>С ведущим или без</h3>
+      <p><b>Без ведущего:</b> все игроки участвуют в раунде. Приложение само выдаёт карты, выбирает первого игрока, следит за готовностью и запускает этапы.</p>
+      <div class="divider"></div>
+      <p><b>С ведущим:</b> один человек управляет игрой и спорными моментами. Такой режим удобен для большой компании, но ведущий фактически меньше участвует как обычный игрок.</p>
+      <div class="spacer"></div><button class="button secondary" data-action="home">Назад</button>
+    </div>
   </div>`;
 }
 
@@ -1838,17 +3422,28 @@ function selectHTML(id,label,opts,value){
 function cardScreen(){
   const a = assignmentFor(); const s = state.room?.settings || {};
   if(!a) return `<div class="card">Карточка ещё не выдана</div>`;
+  const players = activePlayers();
+  const readyCount = cardReadyCount();
+  const allReady = everybodyCardReady();
+  const iAmReady = isCardReady();
   if(state.lastCardHidden){
-    return `<div class="cardReveal"><div><div class="secretStamp">секретная карта</div><div class="bigTitle">Нажми, чтобы посмотреть</div><p class="muted">Показывай экран только себе.</p><button class="button" data-action="show-card">Показать карту</button></div></div>`;
+    return `<div class="cardReveal"><div><div class="secretStamp">секретная карта</div><div class="bigTitle">Нажми, чтобы посмотреть</div><p class="muted">Показывай экран только себе. После просмотра нажми «Я готов».</p><p class="tiny">Готовы: <b>${readyCount}/${players.length}</b></p><button class="button" data-action="show-card">Показать карту</button></div></div>`;
   }
   const isSpy = a.team === 'spy';
+  const readyBlock = iAmReady
+    ? `<p class="oktext"><b>Ты готов.</b> Готовы: ${readyCount}/${players.length}</p>`
+    : `<button class="button ok" data-action="card-ready">Я готов</button><p class="tiny">Раунд начнётся только после готовности всех игроков.</p>`;
+  const startBlock = allReady
+    ? (isHost() ? `<button class="button" data-action="go-play">Начать раунд</button>` : `<p class="oktext">Все готовы. Ждём, когда ведущий начнёт раунд.</p>`)
+    : `<p class="muted">Ждём остальных игроков: <b>${readyCount}/${players.length}</b></p>`;
   return `<div class="cardReveal"><div>
     <div class="secretStamp">${isSpy ? 'ты шпион' : 'ты свой'}</div>
     <div class="bigTitle">${isSpy ? 'ШПИОН' : escapeHTML(a.location)}</div>
     <p class="muted">${a.role ? `Роль: <b>${escapeHTML(a.role)}</b>` : (s.rolesEnabled ? 'Роль не используется' : 'Раунд без ролей')}</p>
     ${isSpy && a.fakeRole ? `<p class="warn">Фейковая роль: <b>${escapeHTML(a.fakeRole)}</b></p>` : ''}
-    <div class="spacer"></div><button class="button secondary" data-action="hide-card">Скрыть</button>
-    <button class="button" data-action="go-play">Перейти к игре</button>
+    <div class="spacer"></div>${readyBlock}
+    <div class="spacer"></div>${startBlock}
+    <div class="spacer"></div><button class="button secondary" data-action="hide-card">Скрыть карту</button>
   </div></div>`;
 }
 
@@ -1974,12 +3569,20 @@ async function savePlayer(c, player){
   if(state.firebase){ await F.setDoc(F.doc(F.db,'rooms',c,'players',player.id), player, {merge:true}); }
   else { const r=state.localRooms[c]; r.players = r.players || {}; r.players[player.id]=player; saveJSON('spy-own-local-rooms', state.localRooms); }
 }
+async function markCardReady(){
+  if(!state.roomCode) return;
+  if(state.firebase){
+    await F.updateDoc(F.doc(F.db,'rooms',state.roomCode), {['cardReady.'+state.userId]: true});
+  }else{
+    await updateRoom({cardReady:{...(state.room?.cardReady||{}), [state.userId]:true}});
+  }
+}
 function clearSubs(){ state.unsub.forEach(fn=>{try{fn()}catch{}}); state.unsub=[]; }
 function subscribe(c){
   if(state.firebase){
-    state.unsub.push(F.onSnapshot(F.doc(F.db,'rooms',c), snap=>{ state.room=snap.exists()?snap.data():null; if(state.room?.status) state.screen=state.room.status==='lobby'?'lobby':state.room.status; render(); }));
-    state.unsub.push(F.onSnapshot(F.collection(F.db,'rooms',c,'players'), snap=>{ state.players=snap.docs.map(d=>d.data()).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); render(); }));
-    state.unsub.push(F.onSnapshot(F.query(F.collection(F.db,'rooms',c,'messages'), F.orderBy('createdAt','asc'), F.limit(80)), snap=>{ state.messages=snap.docs.map(d=>d.data()); render(); }));
+    state.unsub.push(F.onSnapshot(F.doc(F.db,'rooms',c), snap=>{ state.room=snap.exists()?snap.data():null; if(state.room?.status) state.screen=state.room.status==='lobby'?'lobby':state.room.status; scheduleRender(); }));
+    state.unsub.push(F.onSnapshot(F.collection(F.db,'rooms',c,'players'), snap=>{ state.players=snap.docs.map(d=>d.data()).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); scheduleRender(); }));
+    state.unsub.push(F.onSnapshot(F.query(F.collection(F.db,'rooms',c,'messages'), F.orderBy('createdAt','asc'), F.limit(80)), snap=>{ state.messages=snap.docs.map(d=>d.data()); scheduleRender(); }));
   } else subscribeLocal();
 }
 function subscribeLocal(){ const r=state.localRooms[state.roomCode]; state.room=r; state.players=Object.values(r.players||{}).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); state.messages=r.messages||[]; }
@@ -2014,7 +3617,7 @@ async function startGame(){
     if(isSpy){ assignments[p.id] = {team:'spy', fakeRole: s.spyFakeRole && s.rolesEnabled ? roles[ri++ % roles.length] : ''}; }
     else { assignments[p.id] = {team:'players', location:location.name, role:s.rolesEnabled ? roles[ri++ % roles.length] : ''}; }
   });
-  await updateRoom({ status:'card', secret:{location, packId:pack.id}, assignments, spyIds, order, currentTurnIndex:0, startedAt:now(), eliminatedSpyIds:[], votes:{}, result:null });
+  await updateRoom({ status:'card', secret:{location, packId:pack.id}, assignments, spyIds, order, currentTurnIndex:0, startedAt:null, cardReady:{}, eliminatedSpyIds:[], votes:{}, result:null });
   state.lastCardHidden=true; state.screen='card'; render();
 }
 
@@ -2065,7 +3668,16 @@ function importPack(){
   try{ const p=JSON.parse(decodeURIComponent(escape(atob(text)))); p.id='custom_'+Date.now().toString(36); state.customPacks.push(p); saveJSON(STORAGE.packs,state.customPacks); state.modal=null; toast('Набор импортирован'); render(); }catch(e){ toast('Не получилось импортировать'); }
 }
 
-setInterval(()=>{ if(state.room?.status==='play') render(); }, 1000);
+setInterval(()=>{
+  if(state.room?.status !== 'play') return;
+  const timerEl = document.querySelector('.timer');
+  if(!timerEl){ scheduleRender(); return; }
+  const s = state.room.settings || {};
+  const remain = Math.max(0, Math.floor(((state.room.startedAt||now()) + (s.duration||420)*1000 - now())/1000));
+  const m = String(Math.floor(remain/60)).padStart(2,'0');
+  const sec = String(remain%60).padStart(2,'0');
+  timerEl.textContent = `${m}:${sec}`;
+}, 1000);
 setInterval(heartbeat, 10000);
 
 async function heartbeat(){
@@ -2110,9 +3722,18 @@ document.addEventListener('click', async (e)=>{
   if(a==='save-room-settings') await saveRoomSettings();
   if(a==='start-game') await startGame();
   if(a==='show-card'){ state.lastCardHidden=false; render(); }
+  if(a==='card-ready'){
+    if(!state.room || state.room.status !== 'card') return;
+    await markCardReady();
+    toast('Ты готов');
+  }
   if(a==='hide-card'){ state.lastCardHidden=true; render(); }
   if(a==='card'){ state.screen='card'; state.lastCardHidden=true; render(); }
-  if(a==='go-play'){ await updateRoom({status:'play', startedAt: state.room.startedAt || now()}); state.screen='play'; render(); }
+  if(a==='go-play'){
+    if(!isHost()){ toast('Начать раунд может ведущий'); return; }
+    if(!everybodyCardReady()){ toast('Ещё не все игроки готовы'); return; }
+    await updateRoom({status:'play', startedAt:now()}); state.screen='play'; render();
+  }
   if(a==='next-turn'){ await updateRoom({currentTurnIndex:(state.room.currentTurnIndex||0)+1}); }
   if(a==='start-vote'){ await updateRoom({status:'vote', votes:{}}); }
   if(a==='cancel-vote'){ await updateRoom({status:'play', votes:{}}); }
@@ -2124,7 +3745,7 @@ document.addEventListener('click', async (e)=>{
     state.modal=null; await finishGame(guess===real?'spies':'players', guess===real?'Шпион угадал локацию.':'Шпион ошибся с локацией.');
   }
   if(a==='send-chat') await sendChat();
-  if(a==='new-round'){ await updateRoom({status:'lobby', assignments:null, spyIds:[], secret:null, result:null, votes:{}, eliminatedSpyIds:[]}); }
+  if(a==='new-round'){ await updateRoom({status:'lobby', assignments:null, spyIds:[], secret:null, result:null, votes:{}, cardReady:{}, eliminatedSpyIds:[]}); }
   if(a==='view-pack'){ state.modal='pack:'+el.dataset.pack; render(); }
   if(a==='add-pack') addPack();
   if(a==='share-pack') exportPack(el.dataset.pack);
