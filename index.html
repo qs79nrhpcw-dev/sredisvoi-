@@ -32,7 +32,7 @@ html,body{margin:0;min-height:100%;background:radial-gradient(circle at top left
 body{overflow-x:hidden}.noise{position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px, transparent 1px);background-size:28px 28px;mask-image:linear-gradient(to bottom, #000, transparent 80%)}
 .app{max-width:980px;margin:0 auto;padding:18px 14px 70px;min-height:100vh}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;position:sticky;top:0;z-index:10;padding-top:max(8px, env(safe-area-inset-top));backdrop-filter:blur(16px)}
 .brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:16px;background:linear-gradient(135deg,var(--red),var(--purple));display:grid;place-items:center;box-shadow:0 10px 30px rgba(255,49,88,.25);font-weight:900}.brand h1{font-size:20px;margin:0;letter-spacing:.2px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.avatar{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,49,88,.25),rgba(139,92,246,.25));display:grid;place-items:center;font-weight:800;cursor:pointer;transition:.2s}.avatar:hover,.button:hover,.card:hover{transform:none}.button,.card,.avatar{will-change:auto}
-.hero{padding:26px;border:1px solid var(--line);border-radius:32px;background:linear-gradient(150deg,rgba(255,255,255,.08),rgba(255,255,255,.025));box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,49,88,.28),transparent 65%)}.hero h2{font-size:34px;margin:0 0 8px;line-height:1.05}.hero p{color:var(--muted);margin:0 0 18px;line-height:1.45}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:var(--radius);background:rgba(17,17,26,.78);padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.22);transition:.2s}.card h3{margin:0 0 8px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.35}.button{appearance:none;border:0;border-radius:18px;padding:14px 16px;background:linear-gradient(135deg,var(--red),var(--purple));color:#fff;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 12px 32px rgba(139,92,246,.2);transition:.2s;text-align:center}.button.secondary{background:rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:none}.button.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--muted)}.button.danger{background:linear-gradient(135deg,#d11140,#7f1d1d)}.button.ok{background:linear-gradient(135deg,#16a34a,#0f766e)}.button:disabled{opacity:.45;cursor:not-allowed;transform:none}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.stack{display:flex;flex-direction:column;gap:12px}.spacer{height:14px}.input,select,textarea{width:100%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:16px;padding:13px 14px;font-size:16px;outline:none}.input:focus,select:focus,textarea:focus{border-color:rgba(139,92,246,.8);box-shadow:0 0 0 4px rgba(139,92,246,.13)}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.07);border-radius:999px;padding:9px 11px;color:var(--muted);font-size:13px}.code{font-size:38px;letter-spacing:8px;font-weight:950;text-align:center;padding:18px;border-radius:22px;background:linear-gradient(135deg,rgba(255,49,88,.16),rgba(139,92,246,.18));border:1px dashed rgba(255,255,255,.25)}.players{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px}.player{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055)}.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 18px var(--ok)}.dot.obs{background:var(--warn);box-shadow:0 0 18px var(--warn)}.dot.out{background:var(--bad);box-shadow:0 0 18px var(--bad)}.muted{color:var(--muted)}.tiny{font-size:12px;color:var(--soft)}.screen{animation:none}@keyframes enter{from{opacity:1;transform:none}to{opacity:1;transform:none}}.cardReveal{min-height:360px;display:grid;place-items:center;text-align:center;border-radius:32px;border:1px solid var(--line);background:radial-gradient(circle at 50% 0%,rgba(255,49,88,.2),transparent 45%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));position:relative;overflow:hidden}.secretStamp{font-size:13px;letter-spacing:4px;color:var(--red);font-weight:900;text-transform:uppercase}.bigTitle{font-size:38px;font-weight:950;line-height:1.05;margin:12px 0}.timer{font-size:44px;font-weight:950;letter-spacing:1px}.turnBox{border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:16px;background:linear-gradient(135deg,rgba(255,49,88,.12),rgba(139,92,246,.12))}.chat{height:260px;overflow:auto;padding:12px;border-radius:20px;background:rgba(0,0,0,.22);border:1px solid var(--line)}.msg{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}.msg b{color:#fff}.msg span{color:var(--muted)}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:#171725;color:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 14px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:40;max-width:92vw}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px}.tab{white-space:nowrap}.locationList{max-height:310px;overflow:auto;display:grid;gap:8px}.locationItem{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:grid;place-items:end center;padding:14px;z-index:30}.modalInner{width:min(720px,100%);max-height:86vh;overflow:auto;border:1px solid var(--line);background:linear-gradient(180deg,#151521,#09090f);border-radius:28px;padding:18px;box-shadow:var(--shadow);animation:none}@keyframes sheet{from{transform:translateY(18px);opacity:0}to{transform:none;opacity:1}}.hidden{display:none!important}.divider{height:1px;background:var(--line);margin:8px 0}.warn{color:var(--warn)}.oktext{color:var(--ok)}.badtext{color:var(--bad)}
+.hero{padding:26px;border:1px solid var(--line);border-radius:32px;background:linear-gradient(150deg,rgba(255,255,255,.08),rgba(255,255,255,.025));box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,49,88,.28),transparent 65%)}.hero h2{font-size:34px;margin:0 0 8px;line-height:1.05}.hero p{color:var(--muted);margin:0 0 18px;line-height:1.45}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:var(--radius);background:rgba(17,17,26,.78);padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.22);transition:.2s}.card h3{margin:0 0 8px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.35}.button{appearance:none;border:0;border-radius:18px;padding:14px 16px;background:linear-gradient(135deg,var(--red),var(--purple));color:#fff;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 12px 32px rgba(139,92,246,.2);transition:.2s;text-align:center}.button.secondary{background:rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:none}.button.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--muted)}.button.danger{background:linear-gradient(135deg,#d11140,#7f1d1d)}.button.ok{background:linear-gradient(135deg,#16a34a,#0f766e)}.button:disabled{opacity:.45;cursor:not-allowed;transform:none}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.stack{display:flex;flex-direction:column;gap:12px}.spacer{height:14px}.input,select,textarea{width:100%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:16px;padding:13px 14px;font-size:16px;outline:none}.input:focus,select:focus,textarea:focus{border-color:rgba(139,92,246,.8);box-shadow:0 0 0 4px rgba(139,92,246,.13)}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.07);border-radius:999px;padding:9px 11px;color:var(--muted);font-size:13px}.code{font-size:38px;letter-spacing:8px;font-weight:950;text-align:center;padding:18px;border-radius:22px;background:linear-gradient(135deg,rgba(255,49,88,.16),rgba(139,92,246,.18));border:1px dashed rgba(255,255,255,.25)}.players{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px}.player{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055)}.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 18px var(--ok)}.dot.obs{background:var(--warn);box-shadow:0 0 18px var(--warn)}.dot.out{background:var(--bad);box-shadow:0 0 18px var(--bad)}.muted{color:var(--muted)}.tiny{font-size:12px;color:var(--soft)}.screen{animation:none}@keyframes enter{from{opacity:1;transform:none}to{opacity:1;transform:none}}.cardReveal{min-height:360px;display:grid;place-items:center;text-align:center;border-radius:32px;border:1px solid var(--line);background:radial-gradient(circle at 50% 0%,rgba(255,49,88,.2),transparent 45%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));position:relative;overflow:hidden}.secretStamp{font-size:13px;letter-spacing:4px;color:var(--red);font-weight:900;text-transform:uppercase}.bigTitle{font-size:38px;font-weight:950;line-height:1.05;margin:12px 0}.timer{font-size:44px;font-weight:950;letter-spacing:1px}.turnBox{border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:16px;background:linear-gradient(135deg,rgba(255,49,88,.12),rgba(139,92,246,.12))}.chat{height:260px;overflow:auto;padding:12px;border-radius:20px;background:rgba(0,0,0,.22);border:1px solid var(--line)}.qrBox{display:grid;place-items:center;padding:12px;border-radius:22px;background:#fff;margin-top:12px}.qrBox img{width:190px;max-width:100%;height:auto;display:block}.msg{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}.msg b{color:#fff}.msg span{color:var(--muted)}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:#171725;color:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 14px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:40;max-width:92vw}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px}.tab{white-space:nowrap}.locationList{max-height:310px;overflow:auto;display:grid;gap:8px}.locationItem{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:grid;place-items:end center;padding:14px;z-index:30}.modalInner{width:min(720px,100%);max-height:86vh;overflow:auto;border:1px solid var(--line);background:linear-gradient(180deg,#151521,#09090f);border-radius:28px;padding:18px;box-shadow:var(--shadow);animation:none}@keyframes sheet{from{transform:translateY(18px);opacity:0}to{transform:none;opacity:1}}.hidden{display:none!important}.divider{height:1px;background:var(--line);margin:8px 0}.warn{color:var(--warn)}.oktext{color:var(--ok)}.badtext{color:var(--bad)}
 @media(max-width:720px){.grid,.grid3,.formgrid{grid-template-columns:1fr}.hero{padding:20px}.hero h2{font-size:30px}.bigTitle{font-size:32px}.topbar{margin-bottom:12px}.brand h1{font-size:17px}.brand p{display:none}.app{padding-left:12px;padding-right:12px}.timer{font-size:38px}}
 
   </style>
@@ -3162,6 +3162,8 @@ const state = {
   cardReturnTo:'play',
   roomStatus:null,
   timerEnding:false,
+  voteAutoEnding:false,
+  chatDraft:'',
   modal:null,
   currentGuess:'',
   localRooms: loadJSON('spy-own-local-rooms', {}),
@@ -3188,6 +3190,7 @@ function paint(html){
   const sameScreen = state.screen === state._paintScreen;
   const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
   const activeId = document.activeElement?.id || '';
+  const activeValue = document.activeElement && ['INPUT','TEXTAREA'].includes(document.activeElement.tagName) ? document.activeElement.value : null;
   app.innerHTML = html;
   lastRenderedHTML = html;
   if(sameScreen){
@@ -3195,6 +3198,7 @@ function paint(html){
       try{ window.scrollTo({top:scrollY, behavior:'auto'}); }catch(e){ window.scrollTo(0, scrollY); }
       if(activeId){
         const el = document.getElementById(activeId);
+        if(el && activeValue !== null && ['INPUT','TEXTAREA'].includes(el.tagName)) el.value = activeValue;
         if(el && ['INPUT','TEXTAREA','SELECT'].includes(el.tagName)) el.focus({preventScroll:true});
       }
     });
@@ -3216,16 +3220,25 @@ function initials(name){ return (name || '?').trim().slice(0,1).toUpperCase(); }
 function me(){ return state.players.find(p=>p.id===state.userId); }
 function isHost(){ return state.room && state.room.hostId === state.userId; }
 function connectedPlayers(){ return state.players.filter(p=>p.status !== 'left'); }
-function activePlayers(){ return state.players.filter(p=>p.status !== 'observer' && p.status !== 'left'); }
-function canControlRound(){
-  const s = state.room?.settings || {};
-  return isHost() || !s.leaderMode;
+function isEliminated(id=state.userId){ return !!id && (state.room?.eliminatedSpyIds||[]).includes(id); }
+function isActiveParticipant(p){ return p && p.status !== 'observer' && p.status !== 'left' && !isEliminated(p.id); }
+function activePlayers(){ return state.players.filter(isActiveParticipant); }
+function canWriteChat(){
+  const p = me();
+  if(!state.room || !p || p.status === 'left' || isEliminated(p.id)) return false;
+  if(p.status === 'observer' && !isRoomController()) return false;
+  return true;
 }
+function canUseSpyGuess(){ return assignmentFor()?.team === 'spy' && !isEliminated(state.userId) && me()?.status !== 'left' && me()?.status !== 'observer'; }
+function canControlRound(){ return isRoomController(); }
 function roomControllerId(){
   if(!state.room) return '';
   const host = state.players.find(p=>p.id===state.room.hostId);
-  if(host && host.status !== 'left') return host.id;
-  const candidates = connectedPlayers().sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0));
+  const hostCanLead = host && host.status !== 'left' && !isEliminated(host.id);
+  if(hostCanLead) return host.id;
+  const candidates = connectedPlayers()
+    .filter(p=>!isEliminated(p.id))
+    .sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0));
   return (candidates.find(p=>p.status==='active') || candidates[0] || {}).id || '';
 }
 function isRoomController(){
@@ -3292,17 +3305,15 @@ function resultKey(){
 }
 function transferHostIfNeeded(){
   if(!state.room || !state.roomCode) return;
-  const host = state.players.find(p=>p.id===state.room.hostId);
-  if(host && host.status !== 'left') return;
-  const candidates = connectedPlayers().sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0));
-  const next = candidates.find(p=>p.status==='active') || candidates[0];
-  if(next?.id && next.id === state.userId){
-    updateRoom({hostId: next.id}).catch(console.error);
-    toast('Ведущий вышел. Управление передано тебе.');
+  const nextId = roomControllerId();
+  if(!nextId || nextId === state.room.hostId) return;
+  if(nextId === state.userId){
+    updateRoom({hostId: nextId}).catch(console.error);
+    toast('Ведущий вышел или выбыл. Управление передано тебе.');
   }
 }
 
-function alivePlayers(){ return activePlayers().filter(p=>!(state.room?.eliminatedSpyIds||[]).includes(p.id)); }
+function alivePlayers(){ return activePlayers(); }
 function assignmentFor(id=state.userId){ return state.room?.assignments?.[id]; }
 function cardReadyMap(){ return state.room?.cardReady || {}; }
 function isCardReady(id=state.userId){ return !!cardReadyMap()[id]; }
@@ -3516,7 +3527,7 @@ function lobbyScreen(){
     <button class="button ok" data-action="start-game">Начать игру</button>
   </div>` : `<div class="card"><h3>Ожидание ведущего</h3><p>Ведущий выбирает правила и запускает раунд.</p></div>`;
   return `<div class="grid">
-    <div class="card"><h3>Код комнаты</h3><div class="code">${escapeHTML(state.roomCode)}</div><div class="spacer"></div><button class="button secondary" data-action="copy-code">Скопировать код</button><button class="button secondary" data-action="share-room">Поделиться</button><button class="button ghost" data-action="leave-room">Выйти</button><p class="tiny">Игроки вводят код на главном экране. После старта новые игроки станут наблюдателями.</p></div>
+    <div class="card"><h3>Код комнаты</h3><div class="code">${escapeHTML(state.roomCode)}</div>${qrHTML()}<div class="spacer"></div><button class="button secondary" data-action="copy-code">Скопировать код</button><button class="button secondary" data-action="share-room">Поделиться</button><button class="button ghost" data-action="leave-room">Выйти</button><p class="tiny">Игроки вводят код на главном экране, переходят по ссылке или сканируют QR. После старта новые игроки станут наблюдателями.</p></div>
     <div class="card"><h3>Игроки ${activePlayers().length}/${s.playerMax}</h3><div class="players">${playerCards}</div></div>
     ${hostSettings}
     ${chatHTML()}
@@ -3574,14 +3585,21 @@ function playScreen(){
   const r=state.room, s=r.settings || {}; const players=alivePlayers(); const current=players[r.currentTurnIndex % Math.max(players.length,1)];
   const remain = r.noTimer ? null : Math.max(0, Math.floor(((r.startedAt||now()) + (s.duration||420)*1000 - now())/1000));
   const timerText = r.noTimer ? 'без таймера' : `${String(Math.floor(remain/60)).padStart(2,'0')}:${String(remain%60).padStart(2,'0')}`;
-  const isSpy = assignmentFor()?.team === 'spy';
   const eliminated = r.eliminatedSpyIds || [];
+  const iAmEliminated = isEliminated(state.userId);
   const controls = canControlRound();
+  if(iAmEliminated){
+    return `<div class="grid">
+      <div class="card"><h3>Вас вычислили</h3><div class="timer">${timerText}</div><p class="warn"><b>Ты выбыл из активной игры.</b></p><p class="muted">Теперь ты наблюдатель: видишь время раунда и чат, но не задаёшь ход, не голосуешь, не угадываешь локацию и не пишешь сообщения.</p></div>
+      <div class="turnBox"><h3>Сейчас спрашивает</h3><div class="bigTitle" style="font-size:28px">${current ? escapeHTML(current.avatar||'') + ' ' + escapeHTML(current.name) : '—'}</div><p class="tiny">Ход переключает ведущий.</p></div>
+      ${chatHTML()}
+    </div>`;
+  }
   return `<div class="grid">
-    <div class="card"><h3>Раунд идёт</h3><div class="timer">${timerText}</div><p class="muted">Первый игрок выбран случайно. Дальше вопросы идут по кругу.</p><div class="spacer"></div><button class="button secondary" data-action="card">Моя карта</button>${isSpy ? `<button class="button" data-action="guess-modal">Я знаю локацию</button>`:''}</div>
+    <div class="card"><h3>Раунд идёт</h3><div class="timer">${timerText}</div><p class="muted">Первый игрок выбран случайно. Дальше вопросы идут по кругу.</p><div class="spacer"></div><button class="button secondary" data-action="card">Моя карта</button>${canUseSpyGuess() ? `<button class="button" data-action="guess-modal">Я знаю локацию</button>`:''}</div>
     <div class="turnBox"><h3>Сейчас спрашивает</h3><div class="bigTitle" style="font-size:28px">${current ? escapeHTML(current.avatar||'') + ' ' + escapeHTML(current.name) : '—'}</div>${controls?`<button class="button secondary" data-action="next-turn">Следующий по кругу</button>`:`<p class="tiny">Ход переключает ведущий.</p>`}</div>
-    <div class="card"><h3>Игроки</h3><div class="players">${players.map(p=>`<div class="player"><span class="dot"></span><div><b>${escapeHTML(p.avatar||'')} ${escapeHTML(p.name)}</b><div class="tiny">${eliminated.includes(p.id)?'вычисленный шпион':'в игре'}</div></div></div>`).join('')}</div></div>
-    <div class="card"><h3>Голосование</h3><p>Можно начать голосование в любой момент, если большинство готово.</p><div class="spacer"></div>${controls?`<button class="button danger" data-action="start-vote">Начать голосование</button>`:`<p class="muted">Голосование запускает ведущий.</p>`}</div>
+    <div class="card"><h3>Игроки</h3><div class="players">${state.players.filter(p=>p.status!=='left').map(p=>`<div class="player"><span class="dot ${p.status==='observer' || eliminated.includes(p.id) ? 'obs':''}"></span><div><b>${escapeHTML(p.avatar||'')} ${escapeHTML(p.name)}</b><div class="tiny">${eliminated.includes(p.id)?'вычисленный шпион':p.status==='observer'?'наблюдатель':'в игре'}</div></div></div>`).join('')}</div></div>
+    <div class="card"><h3>Голосование</h3><p>Голосование может начать только ведущий или условный ведущий.</p><div class="spacer"></div>${controls?`<button class="button danger" data-action="start-vote">Начать голосование</button>`:`<p class="muted">Голосование запускает ведущий.</p>`}</div>
     ${chatHTML()}
   </div>`;
 }
@@ -3589,14 +3607,19 @@ function playScreen(){
 function voteScreen(){
   const r=state.room; const votes=r.votes||{}; const players=alivePlayers();
   const visible = r.settings?.voteType === 'open'; const controls = canControlRound();
-  const canVote = players.some(p=>p.id===state.userId);
+  const canVote = players.some(p=>p.id===state.userId) && !isEliminated(state.userId);
   const myVote = votes[state.userId] || '';
-  const voteCount = players.filter(p=>votes[p.id]).length;
-  return `<div class="card"><h3>Голосование</h3><p class="muted">Выберите, кто шпион. Голос можно поменять до подведения итогов.</p>
+  const validVoteCount = players.filter(p=>votes[p.id] && votes[p.id] !== p.id && players.some(x=>x.id===votes[p.id])).length;
+  const remain = Math.max(0, Math.ceil(((r.voteStartedAt || now()) + ((r.voteDuration || 30) * 1000) - now())/1000));
+  return `<div class="card"><h3>Голосование</h3><div class="timer">00:${String(remain).padStart(2,'0')}</div><p class="muted">На голосование даётся 30 секунд. Если проголосуют все — итоги подведутся досрочно. По истечении времени учитываются уже отданные голоса.</p>
     ${!canVote ? `<p class="warn">Ты наблюдатель или уже выбыл, поэтому не голосуешь.</p>` : ''}
-    <div class="locationList">${players.map(p=>`<button class="button ${myVote===p.id?'ok':'secondary'}" data-action="vote-player" data-id="${p.id}" ${canVote?'':'disabled'}>${myVote===p.id?'✓ ':''}${escapeHTML(p.avatar||'')} ${escapeHTML(p.name)} ${visible ? `<span class="tiny">· голосов: ${Object.values(votes).filter(v=>v===p.id).length}</span>`:''}</button>`).join('')}</div>
-    <div class="spacer"></div><p>Проголосовали: <b>${voteCount}/${players.length}</b></p>
-    ${controls?`<button class="button" data-action="finish-vote" ${voteCount<players.length?'disabled':''}>Подвести итоги</button>${voteCount<players.length?`<button class="button ghost" data-action="force-finish-vote">Завершить досрочно</button>`:''}<button class="button ghost" data-action="cancel-vote">Отменить</button>`:''}
+    <div class="locationList">${players.map(p=>{
+      const self = p.id===state.userId;
+      const disabled = !canVote || self;
+      return `<button class="button ${myVote===p.id?'ok':'secondary'}" data-action="vote-player" data-id="${p.id}" ${disabled?'disabled':''}>${myVote===p.id?'✓ ':''}${escapeHTML(p.avatar||'')} ${escapeHTML(p.name)} ${self ? '<span class="tiny">· это ты</span>' : ''} ${visible ? `<span class="tiny">· голосов: ${Object.values(votes).filter(v=>v===p.id).length}</span>`:''}</button>`;
+    }).join('')}</div>
+    <div class="spacer"></div><p>Проголосовали: <b>${validVoteCount}/${players.length}</b></p>
+    ${controls?`<button class="button ghost" data-action="force-finish-vote">Завершить сейчас</button><button class="button ghost" data-action="cancel-vote">Отменить</button>`:''}
   </div>${chatHTML()}`;
 }
 
@@ -3622,13 +3645,18 @@ function resultsScreen(){
     <p>Локация: <b>${escapeHTML(loc||'—')}</b></p><p>Шпион${(r.spyIds||[]).length>1?'ы':''}: <b>${escapeHTML(spyNames)}</b></p>
     ${traitorName ? `<p>Предатель: <b>${escapeHTML(traitorName)}</b></p>` : ''}
     <p class="muted">${escapeHTML(r.result?.reason || '')}</p>
-    <div class="spacer"></div>${isHost()?`<button class="button" data-action="new-round">Новый раунд</button>`:''}<button class="button secondary" data-action="home">Домой</button>
+    <div class="spacer"></div>${canControlRound()?`<button class="button" data-action="new-round">Новый раунд</button>`:''}<button class="button secondary" data-action="home">Домой</button>
   </div></div>${chatHTML()}`;
 }
 
 function chatHTML(){
   const msgs = state.messages.slice(-60).map(m=>`<div class="msg"><b>${escapeHTML(m.name||'Игрок')}:</b> <span>${escapeHTML(m.text||'')}</span></div>`).join('');
-  return `<div class="card"><h3>Чат</h3><div class="chat">${msgs || '<p class="muted">Сообщений пока нет</p>'}</div><div class="row" style="margin-top:10px"><input class="input" id="chatText" placeholder="Сообщение" style="flex:1;min-width:180px"><button class="button secondary" data-action="send-chat">Отправить</button></div></div>`;
+  const canSend = canWriteChat();
+  const inputValue = escapeHTML(state.chatDraft || '');
+  const controls = canSend
+    ? `<div class="row" style="margin-top:10px"><input class="input" id="chatText" value="${inputValue}" placeholder="Сообщение" maxlength="300" style="flex:1;min-width:180px"><button class="button secondary" data-action="send-chat">Отправить</button></div>`
+    : `<p class="tiny">Чат доступен только для чтения: наблюдатели и вычисленные игроки не пишут сообщения.</p>`;
+  return `<div class="card"><h3>Чат</h3><div class="chat">${msgs || '<p class="muted">Сообщений пока нет</p>'}</div>${controls}</div>`;
 }
 
 function modalHTML(){
@@ -3652,6 +3680,11 @@ function roomInviteText(){
   const c = state.roomCode || '';
   if(bot) return `https://t.me/${bot}?startapp=${encodeURIComponent(c)}`;
   return `Код комнаты: ${c}`;
+}
+function qrHTML(){
+  const data = roomInviteText();
+  const src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=12&data=${encodeURIComponent(data)}`;
+  return `<div class="qrBox"><img src="${src}" alt="QR-код для входа в комнату"></div><p class="tiny">Отсканируй QR-код другим телефоном или отправь ссылку через «Поделиться».</p>`;
 }
 async function shareRoom(){
   const text = roomInviteText();
@@ -3757,8 +3790,11 @@ function subscribe(c){
 function subscribeLocal(){ const r=state.localRooms[state.roomCode]; state.room=r; applyRoomStatus(r); state.players=Object.values(r.players||{}).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); state.messages=r.messages||[]; transferHostIfNeeded(); }
 
 async function sendChat(){
-  const input=document.querySelector('#chatText'); const text=input?.value.trim(); if(!text) return;
+  if(!canWriteChat()){ toast('Ты не можешь писать в чат как наблюдатель'); return; }
+  const input=document.querySelector('#chatText'); const text=input?.value.trim().slice(0,300); if(!text) return;
   const msg={ id:uid(), name:state.profile.name||'Игрок', text, createdAt:now() };
+  state.chatDraft='';
+  if(input) input.value='';
   if(state.firebase){ await F.addDoc(F.collection(F.db,'rooms',state.roomCode,'messages'), msg); }
   else { const r=state.localRooms[state.roomCode]; r.messages=[...(r.messages||[]), msg]; saveJSON('spy-own-local-rooms', state.localRooms); subscribeLocal(); render(); }
 }
@@ -3780,6 +3816,11 @@ async function startGame(){
   if(s.mode === 'hard'){
     s.rolesEnabled = true;
     s.spyFakeRole = true;
+    s.voteType = 'secret';
+    s.duration = Math.min(Number(s.duration||420), 420);
+  }
+  if(s.mode === 'category'){
+    s.spyFakeRole = s.spyFakeRole && s.rolesEnabled;
   }
   const allActive=activePlayers();
   let players = s.leaderMode ? allActive.filter(p=>p.id!==state.room.hostId) : allActive;
@@ -3793,7 +3834,8 @@ async function startGame(){
   if(players.length < 3){ toast(s.leaderMode ? 'Нужно минимум 3 игрока кроме ведущего' : 'Минимум 3 игрока'); return; }
   if(s.mode === 'traitor' && players.length < 5){ toast('Для режима «Предатель» нужно минимум 5 игроков'); return; }
   if(players.length > 15){ toast('Максимум 15 игроков'); return; }
-  let spyCount = Math.min(Math.max(1, Number(s.spyCount||1)), Math.max(1, players.length-2));
+  const maxSpyCount = s.mode === 'traitor' ? Math.max(1, Math.min(3, Math.floor((players.length-1)/3))) : Math.max(1, Math.min(3, players.length-2));
+  let spyCount = Math.min(Math.max(1, Number(s.spyCount||1)), maxSpyCount);
   let traitorId = null;
   const pack = getPack(s.packId); const location = shuffle(pack.locations)[0]; const order = shuffle(players).map(p=>p.id);
   const spyIds = order.slice(0, spyCount);
@@ -3812,7 +3854,7 @@ async function startGame(){
       assignments[p.id] = {team:'players', location:location.name, role:s.rolesEnabled ? roles[ri++ % roles.length] : ''};
     }
   });
-  await updateRoom({ status:'card', roundId:uid(), settings:s, secret:{location, packId:pack.id, tone:pack.tone||pack.name}, assignments, spyIds, traitorId, order, currentTurnIndex:0, startedAt:null, noTimer:false, cardReady:{}, eliminatedSpyIds:[], votes:{}, result:null, timeEndedAt:null });
+  await updateRoom({ status:'card', roundId:uid(), settings:s, secret:{location, packId:pack.id, tone:pack.tone||pack.name}, assignments, spyIds, traitorId, order, currentTurnIndex:0, startedAt:null, noTimer:false, cardReady:{}, eliminatedSpyIds:[], votes:{}, voteStartedAt:null, voteDuration:30, result:null, timeEndedAt:null });
   state.lastCardHidden=true; state.screen='card'; render();
 }
 
@@ -3821,7 +3863,7 @@ function buildVoteResolution(r, players, force=false){
   const validVotes = {};
   players.forEach(p=>{
     const target = votes[p.id];
-    if(target && players.some(x=>x.id===target)) validVotes[p.id] = target;
+    if(target && target !== p.id && players.some(x=>x.id===target)) validVotes[p.id] = target;
   });
   if(Object.keys(validVotes).length < players.length && !force){
     return {error:'Не все проголосовали'};
@@ -3830,7 +3872,9 @@ function buildVoteResolution(r, players, force=false){
   Object.values(validVotes).forEach(id=>tally[id]=(tally[id]||0)+1);
   const sorted=Object.entries(tally).sort((a,b)=>b[1]-a[1]);
   const top=sorted[0]?.[0];
-  if(!top) return {error:'Нет голосов'};
+  if(!top){
+    return {patch:{status:'results', result:{id:uid(), winner:'spies', reason:'Время голосования вышло, но никто не проголосовал.', endedAt:now()}}};
+  }
   const topVotes=sorted[0][1];
   const tie=sorted.filter(x=>x[1]===topVotes).length>1;
   if(tie){
@@ -3840,19 +3884,19 @@ function buildVoteResolution(r, players, force=false){
   if(!isSpy){
     return {patch:{status:'results', result:{id:uid(), winner:'spies', reason:'На голосовании выбрали не шпиона.', endedAt:now()}}};
   }
-  const eliminated=[...(r.eliminatedSpyIds||[]), top];
+  const eliminated=[...(r.eliminatedSpyIds||[]), top].filter((v,i,a)=>a.indexOf(v)===i);
   const allFound=(r.spyIds||[]).every(id=>eliminated.includes(id));
   if(allFound){
     return {patch:{status:'results', eliminatedSpyIds: eliminated, result:{id:uid(), winner:'players', reason:'Все шпионы вычислены.', endedAt:now()}}};
   }
-  return {patch:{status:'play', eliminatedSpyIds:eliminated, votes:{}, currentTurnIndex:(r.currentTurnIndex||0)+1, timeEndedAt:null, startedAt:now(), noTimer:false}};
+  return {patch:{status:'play', eliminatedSpyIds:eliminated, votes:{}, voteStartedAt:null, voteDuration:30, currentTurnIndex:(r.currentTurnIndex||0)+1, timeEndedAt:null, startedAt:now(), noTimer:false}};
 }
 
 async function processVote(force=false){
   if(!canControlRound()){ toast('Завершить голосование может ведущий'); return; }
   const currentRoom = state.room;
   if(!currentRoom || currentRoom.status==='results') return;
-  const players=alivePlayers();
+  const players=activePlayers();
   const resolution = buildVoteResolution(currentRoom, players, force);
   if(resolution.error){ toast(resolution.error); return; }
   if(state.firebase){
@@ -3862,7 +3906,8 @@ async function processVote(force=false){
       if(!snap.exists()) return;
       const latest = snap.data();
       if(latest.status === 'results') return;
-      const latestResolution = buildVoteResolution(latest, players, force);
+      const latestPlayers = state.players.filter(p=>p.status !== 'observer' && p.status !== 'left' && !(latest.eliminatedSpyIds||[]).includes(p.id));
+      const latestResolution = buildVoteResolution(latest, latestPlayers, force);
       if(latestResolution.error) throw new Error(latestResolution.error);
       tx.update(ref, latestResolution.patch);
     }).catch(err=>toast(err.message || 'Не удалось завершить голосование'));
@@ -3929,6 +3974,24 @@ setInterval(async ()=>{
     setTimeout(()=>state.timerEnding=false, 2500);
   }
 }, 1000);
+
+setInterval(async ()=>{
+  if(state.room?.status !== 'vote') return;
+  const players = activePlayers();
+  const votes = state.room.votes || {};
+  const validVoteCount = players.filter(p=>votes[p.id] && votes[p.id] !== p.id && players.some(x=>x.id===votes[p.id])).length;
+  const remain = Math.max(0, Math.ceil(((state.room.voteStartedAt || now()) + ((state.room.voteDuration || 30) * 1000) - now())/1000));
+  const timerEl = document.querySelector('.timer');
+  if(timerEl) timerEl.textContent = `00:${String(remain).padStart(2,'0')}`;
+  if(!isRoomController() || state.voteAutoEnding) return;
+  if(players.length && validVoteCount >= players.length){
+    state.voteAutoEnding = true;
+    try{ await processVote(false); } finally { setTimeout(()=>state.voteAutoEnding=false, 1500); }
+  } else if(remain <= 0){
+    state.voteAutoEnding = true;
+    try{ signal('warning'); await processVote(true); } finally { setTimeout(()=>state.voteAutoEnding=false, 1500); }
+  }
+}, 1000);
 setInterval(heartbeat, 10000);
 
 async function heartbeat(){
@@ -3940,7 +4003,7 @@ async function heartbeat(){
 }
 
 async function markStalePlayers(){
-  if(!['lobby','card','play','vote','timeup'].includes(state.room?.status)) return;
+  if(!['lobby','card','play','vote','timeup','results'].includes(state.room?.status)) return;
   const cutoff = now() - 45000;
   const stale = state.players.filter(p=>p.id!==state.userId && p.status!=='left' && p.lastSeen && p.lastSeen < cutoff);
   for(const p of stale){ await savePlayer(state.roomCode, {...p, status:'left'}); }
@@ -3950,6 +4013,15 @@ async function markStalePlayers(){
     await finishGame('players','Все шпионы вышли из игры.');
   }
 }
+
+document.addEventListener('input', (e)=>{
+  if(e.target?.id === 'chatText') state.chatDraft = e.target.value;
+});
+
+document.addEventListener('keydown', async (e)=>{
+  if(e.key === 'Enter' && e.target?.id === 'chatText'){ e.preventDefault(); await sendChat(); }
+  if(e.key === 'Enter' && e.target?.id === 'joinCode'){ e.preventDefault(); await enterRoom(e.target.value); }
+});
 
 document.addEventListener('click', async (e)=>{
   const el=e.target.closest('[data-action]'); if(!el) return;
@@ -3988,9 +4060,9 @@ document.addEventListener('click', async (e)=>{
     await updateRoom({status:'play', startedAt:now()}); state.screen='play'; render();
   }
   if(a==='next-turn'){ if(!canControlRound()){ toast('Ход переключает ведущий'); return; } await updateRoom({currentTurnIndex:(state.room.currentTurnIndex||0)+1}); }
-  if(a==='start-vote'){ if(!canControlRound()){ toast('Голосование запускает ведущий'); return; } await updateRoom({status:'vote', votes:{}, timeEndedAt:null}); }
-  if(a==='cancel-vote'){ if(!canControlRound()){ toast('Отменить может ведущий'); return; } await updateRoom({status:'play', votes:{}}); }
-  if(a==='vote-player'){ const players=alivePlayers(); if(!players.some(p=>p.id===state.userId)){ toast('Ты не участвуешь в голосовании'); return; } if(!players.some(p=>p.id===el.dataset.id)){ toast('Игрок уже не участвует'); return; } if(state.firebase){ await F.updateDoc(F.doc(F.db,'rooms',state.roomCode), {['votes.'+state.userId]: el.dataset.id}); } else { await updateRoom({votes:{...(state.room.votes||{}), [state.userId]:el.dataset.id}}); } }
+  if(a==='start-vote'){ if(!canControlRound()){ toast('Голосование запускает ведущий'); return; } await updateRoom({status:'vote', votes:{}, voteStartedAt:now(), voteDuration:30, timeEndedAt:null}); }
+  if(a==='cancel-vote'){ if(!canControlRound()){ toast('Отменить может ведущий'); return; } await updateRoom({status:'play', votes:{}, voteStartedAt:null}); }
+  if(a==='vote-player'){ const players=alivePlayers(); if(!players.some(p=>p.id===state.userId) || isEliminated(state.userId)){ toast('Ты не участвуешь в голосовании'); return; } if(el.dataset.id===state.userId){ toast('За себя голосовать нельзя'); return; } if(!players.some(p=>p.id===el.dataset.id)){ toast('Игрок уже не участвует'); return; } if(state.firebase){ await F.updateDoc(F.doc(F.db,'rooms',state.roomCode), {['votes.'+state.userId]: el.dataset.id}); } else { await updateRoom({votes:{...(state.room.votes||{}), [state.userId]:el.dataset.id}}); } }
   if(a==='finish-vote') await processVote(false);
   if(a==='force-finish-vote') await processVote(true);
   if(a==='add-minute'){ if(!canControlRound()) return; const s=state.room.settings||{}; await updateRoom({status:'play', noTimer:false, startedAt: now() - (Number(s.duration||420)*1000) + 60000, timeEndedAt:null}); }
@@ -3998,11 +4070,11 @@ document.addEventListener('click', async (e)=>{
   if(a==='guess-modal'){ state.modal='guess'; render(); }
   if(a==='spy-guess'){
     const guess=el.dataset.location; const real=state.room.secret.location.name;
-    if(assignmentFor()?.team !== 'spy'){ toast('Угадывать может только шпион'); return; }
+    if(!canUseSpyGuess()){ toast('Угадывать может только активный шпион'); return; }
     state.modal=null; await finishGame(guess===real?'spies':'players', guess===real?'Шпион угадал локацию.':'Шпион ошибся с локацией.');
   }
   if(a==='send-chat') await sendChat();
-  if(a==='new-round'){ if(!isHost()) return; if(state.room?.result?.endedAt && now()-state.room.result.endedAt < 3000){ toast('Итоги показываются минимум несколько секунд'); return; } await updateRoom({status:'lobby', roundId:null, assignments:null, spyIds:[], traitorId:null, secret:null, result:null, votes:{}, cardReady:{}, eliminatedSpyIds:[], startedAt:null, noTimer:false, timeEndedAt:null}); }
+  if(a==='new-round'){ if(!canControlRound()) return; if(state.room?.result?.endedAt && now()-state.room.result.endedAt < 3000){ toast('Итоги показываются минимум несколько секунд'); return; } await updateRoom({status:'lobby', roundId:null, assignments:null, spyIds:[], traitorId:null, secret:null, result:null, votes:{}, voteStartedAt:null, voteDuration:30, cardReady:{}, eliminatedSpyIds:[], startedAt:null, noTimer:false, timeEndedAt:null}); }
   if(a==='view-pack'){ state.modal='pack:'+el.dataset.pack; render(); }
   if(a==='add-pack') addPack();
   if(a==='share-pack') exportPack(el.dataset.pack);
