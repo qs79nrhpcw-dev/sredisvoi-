@@ -1897,7 +1897,7 @@ function chatHTML(){
 
 function modalHTML(){
   if(!state.modal) return '';
-  if(state.modal === 'join') return `<div class="modal" data-action="close-modal"><div class="modalInner" onclick="event.stopPropagation()"><h3>Войти в комнату</h3><label>Код комнаты</label><input class="input" id="joinCode" placeholder="Например, A7K2Q" maxlength="8"><div class="spacer"></div><button class="button" data-action="join-room">Войти</button><button class="button ghost" data-action="close-modal">Закрыть</button></div></div>`;
+  if(state.modal === 'join') return `<div class="modal" data-action="close-modal"><div class="modalInner"><h3>Войти в комнату</h3><label>Код комнаты</label><input class="input" id="joinCode" placeholder="Например, A7K2Q" maxlength="8" autocomplete="off"><div class="spacer"></div><button class="button" data-action="join-room">Войти</button><button class="button ghost" data-action="close-modal">Закрыть</button></div></div>`;
   if(state.modal === 'guess'){
     const pack = getPack(state.room?.settings?.packId);
     return `<div class="modal"><div class="modalInner"><h3>Назови локацию</h3><p class="muted">Если угадаешь — шпионы победят. Если ошибёшься — победят свои.</p><div class="locationList">${pack.locations.map(l=>`<button class="button secondary" data-action="spy-guess" data-location="${escapeHTML(l.name)}">${escapeHTML(l.name)}</button>`).join('')}</div><div class="spacer"></div><button class="button ghost" data-action="close-modal">Закрыть</button></div></div>`;
@@ -1942,13 +1942,23 @@ async function createRoom(){
 }
 
 async function enterRoom(c){
-  c=(c||'').trim().toUpperCase(); if(!c) return;
-  clearSubs(); state.roomCode=c;
-  let room = await readRoom(c);
-  if(!room){ toast('Комната не найдена'); return; }
-  const status = room.status==='lobby' ? 'active' : 'observer';
-  await savePlayer(c, { id:state.userId, name:state.profile.name||'Игрок', avatar:state.profile.avatar||'🕵️', status, joinedAt:now(), lastSeen:now() });
-  subscribe(c); state.modal=null; state.screen = room.status==='lobby' ? 'lobby' : room.status; render();
+  c=(c||'').trim().toUpperCase();
+  if(!c){ toast('Введи код комнаты'); return; }
+  try{
+    clearSubs();
+    state.roomCode=c;
+    let room = await readRoom(c);
+    if(!room){ state.roomCode=null; toast('Комната не найдена'); return; }
+    const status = room.status==='lobby' ? 'active' : 'observer';
+    await savePlayer(c, { id:state.userId, name:state.profile.name||'Игрок', avatar:state.profile.avatar||'🕵️', status, joinedAt:now(), lastSeen:now() });
+    subscribe(c);
+    state.modal=null;
+    state.screen = room.status==='lobby' ? 'lobby' : room.status;
+    render();
+  }catch(err){
+    console.error(err);
+    toast('Не удалось войти. Проверь правила Firestore');
+  }
 }
 
 async function readRoom(c){
@@ -2080,6 +2090,7 @@ async function markStalePlayers(){
 document.addEventListener('click', async (e)=>{
   const el=e.target.closest('[data-action]'); if(!el) return;
   const a=el.dataset.action;
+  if(a==='close-modal' && el.classList.contains('modal') && e.target !== el) return;
   if(a==='home'){ state.screen='home'; state.modal=null; clearSubs(); render(); }
   if(a==='profile'){ state.screen='profile'; state.modal=null; render(); }
   if(a==='rules'){ state.screen='rules'; render(); }
