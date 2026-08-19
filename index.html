@@ -27,11 +27,11 @@
   --shadow: 0 24px 80px rgba(0,0,0,.45);
   --radius:22px;
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;min-height:100%;background:radial-gradient(circle at top left, rgba(139,92,246,.22), transparent 35%),radial-gradient(circle at top right, rgba(255,49,88,.18), transparent 32%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Arial,sans-serif;}
 body{overflow-x:hidden}.noise{position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px, transparent 1px);background-size:28px 28px;mask-image:linear-gradient(to bottom, #000, transparent 80%)}
 .app{max-width:980px;margin:0 auto;padding:18px 14px 70px;min-height:100vh}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;position:sticky;top:0;z-index:10;padding-top:max(8px, env(safe-area-inset-top));backdrop-filter:blur(16px)}
-.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:16px;background:linear-gradient(135deg,var(--red),var(--purple));display:grid;place-items:center;box-shadow:0 10px 30px rgba(255,49,88,.25);font-weight:900}.brand h1{font-size:20px;margin:0;letter-spacing:.2px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.avatar{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,49,88,.25),rgba(139,92,246,.25));display:grid;place-items:center;font-weight:800;cursor:pointer;transition:.2s}.avatar:hover,.button:hover,.card:hover{transform:translateY(-1px)}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:16px;background:linear-gradient(135deg,var(--red),var(--purple));display:grid;place-items:center;box-shadow:0 10px 30px rgba(255,49,88,.25);font-weight:900}.brand h1{font-size:20px;margin:0;letter-spacing:.2px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.avatar{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,49,88,.25),rgba(139,92,246,.25));display:grid;place-items:center;font-weight:800;cursor:pointer;transition:.2s}.avatar:hover,.button:hover,.card:hover{transform:none}.button,.card,.avatar{will-change:auto}
 .hero{padding:26px;border:1px solid var(--line);border-radius:32px;background:linear-gradient(150deg,rgba(255,255,255,.08),rgba(255,255,255,.025));box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,49,88,.28),transparent 65%)}.hero h2{font-size:34px;margin:0 0 8px;line-height:1.05}.hero p{color:var(--muted);margin:0 0 18px;line-height:1.45}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{border:1px solid var(--line);border-radius:var(--radius);background:rgba(17,17,26,.78);padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.22);transition:.2s}.card h3{margin:0 0 8px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.35}.button{appearance:none;border:0;border-radius:18px;padding:14px 16px;background:linear-gradient(135deg,var(--red),var(--purple));color:#fff;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 12px 32px rgba(139,92,246,.2);transition:.2s;text-align:center}.button.secondary{background:rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:none}.button.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--muted)}.button.danger{background:linear-gradient(135deg,#d11140,#7f1d1d)}.button.ok{background:linear-gradient(135deg,#16a34a,#0f766e)}.button:disabled{opacity:.45;cursor:not-allowed;transform:none}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.stack{display:flex;flex-direction:column;gap:12px}.spacer{height:14px}.input,select,textarea{width:100%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:16px;padding:13px 14px;font-size:16px;outline:none}.input:focus,select:focus,textarea:focus{border-color:rgba(139,92,246,.8);box-shadow:0 0 0 4px rgba(139,92,246,.13)}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.07);border-radius:999px;padding:9px 11px;color:var(--muted);font-size:13px}.code{font-size:38px;letter-spacing:8px;font-weight:950;text-align:center;padding:18px;border-radius:22px;background:linear-gradient(135deg,rgba(255,49,88,.16),rgba(139,92,246,.18));border:1px dashed rgba(255,255,255,.25)}.players{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px}.player{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055)}.dot{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 18px var(--ok)}.dot.obs{background:var(--warn);box-shadow:0 0 18px var(--warn)}.dot.out{background:var(--bad);box-shadow:0 0 18px var(--bad)}.muted{color:var(--muted)}.tiny{font-size:12px;color:var(--soft)}.screen{animation:none}@keyframes enter{from{opacity:1;transform:none}to{opacity:1;transform:none}}.cardReveal{min-height:360px;display:grid;place-items:center;text-align:center;border-radius:32px;border:1px solid var(--line);background:radial-gradient(circle at 50% 0%,rgba(255,49,88,.2),transparent 45%),linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));position:relative;overflow:hidden}.secretStamp{font-size:13px;letter-spacing:4px;color:var(--red);font-weight:900;text-transform:uppercase}.bigTitle{font-size:38px;font-weight:950;line-height:1.05;margin:12px 0}.timer{font-size:44px;font-weight:950;letter-spacing:1px}.turnBox{border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:16px;background:linear-gradient(135deg,rgba(255,49,88,.12),rgba(139,92,246,.12))}.chat{height:260px;overflow:auto;padding:12px;border-radius:20px;background:rgba(0,0,0,.22);border:1px solid var(--line)}.msg{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}.msg b{color:#fff}.msg span{color:var(--muted)}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:#171725;color:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 14px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:40;max-width:92vw}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px}.tab{white-space:nowrap}.locationList{max-height:310px;overflow:auto;display:grid;gap:8px}.locationItem{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:grid;place-items:end center;padding:14px;z-index:30}.modalInner{width:min(720px,100%);max-height:86vh;overflow:auto;border:1px solid var(--line);background:linear-gradient(180deg,#151521,#09090f);border-radius:28px;padding:18px;box-shadow:var(--shadow);animation:none}@keyframes sheet{from{transform:translateY(18px);opacity:0}to{transform:none;opacity:1}}.hidden{display:none!important}.divider{height:1px;background:var(--line);margin:8px 0}.warn{color:var(--warn)}.oktext{color:var(--ok)}.badtext{color:var(--bad)}
 @media(max-width:720px){.grid,.grid3,.formgrid{grid-template-columns:1fr}.hero{padding:20px}.hero h2{font-size:30px}.bigTitle{font-size:32px}.topbar{margin-bottom:12px}.brand h1{font-size:17px}.brand p{display:none}.app{padding-left:12px;padding-right:12px}.timer{font-size:38px}}
 
@@ -40,7 +40,7 @@ body{overflow-x:hidden}.noise{position:fixed;inset:0;pointer-events:none;opacity
 // Заполни этот файл перед публикацией.
 // Без Firebase игра откроется, но онлайн-комнаты с разных телефонов работать не будут.
 
-window.BOT_USERNAME = ""; // сюда позже можно вписать username бота без @ для ссылок-приглашений
+window.BOT_USERNAME = "svoi_sredi_chuzhih_bot"; // сюда позже можно вписать username бота без @ для ссылок-приглашений
 
 window.FIREBASE_CONFIG = {
   apiKey: "AIzaSyCOJwfxZb02quZ43Lyc7cpbF_EurRxJ2jY",
@@ -3135,7 +3135,8 @@ const DEFAULT_PACKS = [
 const STORAGE = {
   profile: 'spy-own-profile-v1',
   packs: 'spy-own-custom-packs-v1',
-  stats: 'spy-own-stats-v1'
+  stats: 'spy-own-stats-v1',
+  seenResults: 'spy-own-seen-results-v1'
 };
 const app = document.querySelector('#app');
 const toastEl = document.querySelector('#toast');
@@ -3150,6 +3151,7 @@ const state = {
   pendingJoinCode:null,
   profile: loadJSON(STORAGE.profile, null) || { name:'', avatar:'🕵️' },
   stats: loadJSON(STORAGE.stats, { games:0, wins:0, spyGames:0, spyWins:0 }),
+  seenResults: loadJSON(STORAGE.seenResults, {}),
   customPacks: loadJSON(STORAGE.packs, []),
   roomCode:null,
   room:null,
@@ -3157,9 +3159,15 @@ const state = {
   messages:[],
   unsub:[],
   lastCardHidden:true,
+  cardReturnTo:'play',
+  roomStatus:null,
+  timerEnding:false,
   modal:null,
   currentGuess:'',
-  localRooms: loadJSON('spy-own-local-rooms', {})
+  localRooms: loadJSON('spy-own-local-rooms', {}),
+  lastTimeupSignalKey:'',
+  lastResultSignalKey:'',
+  _paintScreen:''
 };
 
 let F = {};
@@ -3177,8 +3185,21 @@ function scheduleRender(){
 
 function paint(html){
   if(html === lastRenderedHTML) return;
+  const sameScreen = state.screen === state._paintScreen;
+  const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+  const activeId = document.activeElement?.id || '';
   app.innerHTML = html;
   lastRenderedHTML = html;
+  if(sameScreen){
+    requestAnimationFrame(()=>{
+      try{ window.scrollTo({top:scrollY, behavior:'auto'}); }catch(e){ window.scrollTo(0, scrollY); }
+      if(activeId){
+        const el = document.getElementById(activeId);
+        if(el && ['INPUT','TEXTAREA','SELECT'].includes(el.tagName)) el.focus({preventScroll:true});
+      }
+    });
+  }
+  state._paintScreen = state.screen;
 }
 
 function loadJSON(key, fallback){ try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }}
@@ -3194,7 +3215,93 @@ function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=
 function initials(name){ return (name || '?').trim().slice(0,1).toUpperCase(); }
 function me(){ return state.players.find(p=>p.id===state.userId); }
 function isHost(){ return state.room && state.room.hostId === state.userId; }
+function connectedPlayers(){ return state.players.filter(p=>p.status !== 'left'); }
 function activePlayers(){ return state.players.filter(p=>p.status !== 'observer' && p.status !== 'left'); }
+function canControlRound(){
+  const s = state.room?.settings || {};
+  return isHost() || !s.leaderMode;
+}
+function roomControllerId(){
+  if(!state.room) return '';
+  const host = state.players.find(p=>p.id===state.room.hostId);
+  if(host && host.status !== 'left') return host.id;
+  const candidates = connectedPlayers().sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0));
+  return (candidates.find(p=>p.status==='active') || candidates[0] || {}).id || '';
+}
+function isRoomController(){
+  return !!state.userId && state.userId === roomControllerId();
+}
+function signal(kind='warning'){
+  try{ window.Telegram?.WebApp?.HapticFeedback?.notificationOccurred(kind); }catch(e){}
+  try{ navigator.vibrate?.(kind==='success' ? [80,40,80] : [140,60,140]); }catch(e){}
+  try{
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if(!Ctx) return;
+    const ctx = new Ctx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = kind==='success' ? 740 : 520;
+    gain.gain.setValueAtTime(0.001, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.08, ctx.currentTime + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.28);
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start(); osc.stop(ctx.currentTime + 0.3);
+    setTimeout(()=>ctx.close?.(), 500);
+  }catch(e){}
+}
+function signalTimeUp(room){
+  const key = `${state.roomCode}_${room?.timeEndedAt || room?.startedAt || ''}`;
+  if(!key || state.lastTimeupSignalKey === key) return;
+  state.lastTimeupSignalKey = key;
+  signal('warning');
+  toast('⏰ Время вышло');
+}
+function signalResult(room){
+  const key = room?.result?.id || `${state.roomCode}_${room?.result?.endedAt || ''}`;
+  if(!key || state.lastResultSignalKey === key) return;
+  state.lastResultSignalKey = key;
+  signal(room?.result?.winner === 'players' ? 'success' : 'warning');
+}
+function screenForStatus(status){
+  if(status === 'lobby') return 'lobby';
+  if(['card','play','vote','timeup','results'].includes(status)) return status;
+  return 'home';
+}
+function applyRoomStatus(room){
+  if(!room?.status) return;
+  const newStatus = room.status;
+  const oldStatus = state.roomStatus;
+  const changed = oldStatus !== newStatus;
+  state.roomStatus = newStatus;
+  if(newStatus === 'timeup' && changed) signalTimeUp(room);
+  if(newStatus === 'results'){
+    updateLocalStatsOnce(room.result?.id, room.result?.winner);
+    if(changed) signalResult(room);
+  }
+  const target = screenForStatus(newStatus);
+  const isManualCardView = state.screen === 'card' && ['play','timeup','vote'].includes(newStatus);
+  if(isManualCardView) return;
+  if(changed || !['profile','rules','packs','settingsGlobal'].includes(state.screen)){
+    state.screen = target;
+  }
+}
+function resultKey(){
+  const r = state.room;
+  return r?.result?.id || (r?.result?.endedAt ? `${state.roomCode}_${r.result.endedAt}` : '');
+}
+function transferHostIfNeeded(){
+  if(!state.room || !state.roomCode) return;
+  const host = state.players.find(p=>p.id===state.room.hostId);
+  if(host && host.status !== 'left') return;
+  const candidates = connectedPlayers().sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0));
+  const next = candidates.find(p=>p.status==='active') || candidates[0];
+  if(next?.id && next.id === state.userId){
+    updateRoom({hostId: next.id}).catch(console.error);
+    toast('Ведущий вышел. Управление передано тебе.');
+  }
+}
+
 function alivePlayers(){ return activePlayers().filter(p=>!(state.room?.eliminatedSpyIds||[]).includes(p.id)); }
 function assignmentFor(id=state.userId){ return state.room?.assignments?.[id]; }
 function cardReadyMap(){ return state.room?.cardReady || {}; }
@@ -3293,6 +3400,7 @@ function render(){
   if(state.screen === 'card') body = cardScreen();
   if(state.screen === 'play') body = playScreen();
   if(state.screen === 'vote') body = voteScreen();
+  if(state.screen === 'timeup') body = timeupScreen();
   if(state.screen === 'results') body = resultsScreen();
   paint(topbar() + `<div class="screen">${body}</div>` + modalHTML());
 }
@@ -3347,9 +3455,9 @@ function rulesScreen(){
       <div class="divider"></div>
       <p><b>Сложный:</b> игра становится более аккуратной: наборы и локации похожи по атмосфере, роли важнее, а прямые ответы легче выдают игроков. Этот режим лучше включать с ролями и фейковой ролью для шпиона.</p>
       <div class="divider"></div>
-      <p><b>Предатель:</b> будущий режим. Один игрок знает локацию, но играет против мирных и старается помочь шпиону запутать остальных.</p>
+      <p><b>Предатель:</b> один игрок знает локацию и роль, но побеждает вместе со шпионами. Его задача — помогать шпионам, не раскрываясь.</p>
       <div class="divider"></div>
-      <p><b>Шпион знает категорию:</b> будущий режим. Шпион не знает точную локацию, но знает общую тему набора, например «ночной город», «спорт» или «хоррор».</p>
+      <p><b>Шпион знает категорию:</b> шпион не знает точную локацию, но видит общую тему набора, например «ночной город», «спорт» или «хоррор».</p>
     </div>
 
     <div class="card"><h3>С ведущим или без</h3>
@@ -3402,7 +3510,7 @@ function lobbyScreen(){
       ${selectHTML('duration','Время', [[180,'3 минуты'],[300,'5 минут'],[420,'7 минут'],[600,'10 минут'],[900,'15 минут']], s.duration)}
       ${selectHTML('voteType','Голосование', [['secret','тайное'],['open','открытое']], s.voteType)}
       ${selectHTML('leaderMode','Режим ведущего', [['false','нет'],['true','да']], String(s.leaderMode))}
-      ${selectHTML('mode','Режим', [['classic','обычный'],['hard','сложный'],['traitor','предатель позже'],['category','шпион знает категорию позже']], s.mode)}
+      ${selectHTML('mode','Режим', [['classic','обычный'],['hard','сложный'],['traitor','предатель'],['category','шпион знает категорию']], s.mode)}
     </div>
     <div class="spacer"></div><button class="button" data-action="save-room-settings">Сохранить настройки</button>
     <button class="button ok" data-action="start-game">Начать игру</button>
@@ -3421,65 +3529,98 @@ function selectHTML(id,label,opts,value){
 
 function cardScreen(){
   const a = assignmentFor(); const s = state.room?.settings || {};
-  if(!a) return `<div class="card">Карточка ещё не выдана</div>`;
   const players = activePlayers();
   const readyCount = cardReadyCount();
   const allReady = everybodyCardReady();
   const iAmReady = isCardReady();
+  if(!a){
+    if(isHost() && s.leaderMode){
+      const startBlock = allReady
+        ? `<button class="button" data-action="go-play">Начать раунд</button>`
+        : `<p class="muted">Ведущий не получает карту. Ждём готовность игроков: <b>${readyCount}/${players.length}</b></p>`;
+      return `<div class="card"><h3>Экран ведущего</h3><p>Ты управляешь раундом и не участвуешь как игрок.</p>${startBlock}<div class="spacer"></div><button class="button secondary" data-action="go-room-status">Вернуться к комнате</button></div>`;
+    }
+    return `<div class="card">Карточка ещё не выдана</div>`;
+  }
   if(state.lastCardHidden){
-    return `<div class="cardReveal"><div><div class="secretStamp">секретная карта</div><div class="bigTitle">Нажми, чтобы посмотреть</div><p class="muted">Показывай экран только себе. После просмотра нажми «Я готов».</p><p class="tiny">Готовы: <b>${readyCount}/${players.length}</b></p><button class="button" data-action="show-card">Показать карту</button></div></div>`;
+    return `<div class="cardReveal"><div><div class="secretStamp">секретная карта</div><div class="bigTitle">Нажми, чтобы посмотреть</div><p class="muted">Показывай экран только себе. После просмотра нажми «Я готов».</p><p class="tiny">Готовы: <b>${readyCount}/${players.length}</b></p><button class="button" data-action="show-card">Показать карту</button>${state.room?.status !== 'card' ? `<div class="spacer"></div><button class="button ghost" data-action="return-card">Вернуться к игре</button>` : ''}</div></div>`;
   }
   const isSpy = a.team === 'spy';
+  const isTraitor = a.team === 'traitor';
+  const title = isSpy ? 'ШПИОН' : isTraitor ? 'ПРЕДАТЕЛЬ' : escapeHTML(a.location);
+  const stamp = isSpy ? 'ты шпион' : isTraitor ? 'ты предатель' : 'ты свой';
+  const spyHint = isSpy && a.category ? `<p class="warn">Категория: <b>${escapeHTML(a.category)}</b></p>` : '';
+  const traitorHint = isTraitor ? `<p class="warn">Ты знаешь локацию, но побеждаешь вместе со шпионами. Запутывай мирных осторожно.</p>` : '';
   const readyBlock = iAmReady
     ? `<p class="oktext"><b>Ты готов.</b> Готовы: ${readyCount}/${players.length}</p>`
-    : `<button class="button ok" data-action="card-ready">Я готов</button><p class="tiny">Раунд начнётся только после готовности всех игроков.</p>`;
-  const startBlock = allReady
-    ? (isHost() ? `<button class="button" data-action="go-play">Начать раунд</button>` : `<p class="oktext">Все готовы. Ждём, когда ведущий начнёт раунд.</p>`)
-    : `<p class="muted">Ждём остальных игроков: <b>${readyCount}/${players.length}</b></p>`;
+    : (state.room?.status === 'card' ? `<button class="button ok" data-action="card-ready">Я готов</button><p class="tiny">Раунд начнётся только после готовности всех игроков.</p>` : '');
+  const startBlock = state.room?.status === 'card'
+    ? (allReady ? (isHost() ? `<button class="button" data-action="go-play">Начать раунд</button>` : `<p class="oktext">Все готовы. Ждём, когда ведущий начнёт раунд.</p>`) : `<p class="muted">Ждём остальных игроков: <b>${readyCount}/${players.length}</b></p>`)
+    : `<button class="button secondary" data-action="return-card">Вернуться к игре</button>`;
   return `<div class="cardReveal"><div>
-    <div class="secretStamp">${isSpy ? 'ты шпион' : 'ты свой'}</div>
-    <div class="bigTitle">${isSpy ? 'ШПИОН' : escapeHTML(a.location)}</div>
+    <div class="secretStamp">${stamp}</div>
+    <div class="bigTitle">${title}</div>
     <p class="muted">${a.role ? `Роль: <b>${escapeHTML(a.role)}</b>` : (s.rolesEnabled ? 'Роль не используется' : 'Раунд без ролей')}</p>
+    ${spyHint}
     ${isSpy && a.fakeRole ? `<p class="warn">Фейковая роль: <b>${escapeHTML(a.fakeRole)}</b></p>` : ''}
+    ${traitorHint}
     <div class="spacer"></div>${readyBlock}
     <div class="spacer"></div>${startBlock}
-    <div class="spacer"></div><button class="button secondary" data-action="hide-card">Скрыть карту</button>
+    <div class="spacer"></div><button class="button ghost" data-action="hide-card">${state.room?.status !== 'card' ? 'Скрыть и вернуться к игре' : 'Скрыть карту'}</button>
   </div></div>`;
 }
 
 function playScreen(){
   const r=state.room, s=r.settings || {}; const players=alivePlayers(); const current=players[r.currentTurnIndex % Math.max(players.length,1)];
-  const remain = Math.max(0, Math.floor(((r.startedAt||now()) + (s.duration||420)*1000 - now())/1000));
-  const m = String(Math.floor(remain/60)).padStart(2,'0'), sec=String(remain%60).padStart(2,'0');
+  const remain = r.noTimer ? null : Math.max(0, Math.floor(((r.startedAt||now()) + (s.duration||420)*1000 - now())/1000));
+  const timerText = r.noTimer ? 'без таймера' : `${String(Math.floor(remain/60)).padStart(2,'0')}:${String(remain%60).padStart(2,'0')}`;
   const isSpy = assignmentFor()?.team === 'spy';
   const eliminated = r.eliminatedSpyIds || [];
+  const controls = canControlRound();
   return `<div class="grid">
-    <div class="card"><h3>Раунд идет</h3><div class="timer">${m}:${sec}</div><p class="muted">Первый игрок был выбран случайно. Дальше вопросы идут по кругу.</p><div class="spacer"></div><button class="button secondary" data-action="card">Моя карта</button>${isSpy ? `<button class="button" data-action="guess-modal">Я знаю локацию</button>`:''}</div>
-    <div class="turnBox"><h3>Сейчас спрашивает</h3><div class="bigTitle" style="font-size:28px">${current ? escapeHTML(current.avatar||'') + ' ' + escapeHTML(current.name) : '—'}</div><button class="button secondary" data-action="next-turn">Следующий по кругу</button></div>
+    <div class="card"><h3>Раунд идёт</h3><div class="timer">${timerText}</div><p class="muted">Первый игрок выбран случайно. Дальше вопросы идут по кругу.</p><div class="spacer"></div><button class="button secondary" data-action="card">Моя карта</button>${isSpy ? `<button class="button" data-action="guess-modal">Я знаю локацию</button>`:''}</div>
+    <div class="turnBox"><h3>Сейчас спрашивает</h3><div class="bigTitle" style="font-size:28px">${current ? escapeHTML(current.avatar||'') + ' ' + escapeHTML(current.name) : '—'}</div>${controls?`<button class="button secondary" data-action="next-turn">Следующий по кругу</button>`:`<p class="tiny">Ход переключает ведущий.</p>`}</div>
     <div class="card"><h3>Игроки</h3><div class="players">${players.map(p=>`<div class="player"><span class="dot"></span><div><b>${escapeHTML(p.avatar||'')} ${escapeHTML(p.name)}</b><div class="tiny">${eliminated.includes(p.id)?'вычисленный шпион':'в игре'}</div></div></div>`).join('')}</div></div>
-    <div class="card"><h3>Голосование</h3><p>Можно начать голосование в любой момент, если большинство готово.</p><div class="spacer"></div><button class="button danger" data-action="start-vote">Начать голосование</button></div>
+    <div class="card"><h3>Голосование</h3><p>Можно начать голосование в любой момент, если большинство готово.</p><div class="spacer"></div>${controls?`<button class="button danger" data-action="start-vote">Начать голосование</button>`:`<p class="muted">Голосование запускает ведущий.</p>`}</div>
     ${chatHTML()}
   </div>`;
 }
 
 function voteScreen(){
-  const r=state.room; const votes=r.votes||{}; const voted=!!votes[state.userId]; const players=alivePlayers();
-  const visible = r.settings?.voteType === 'open';
-  return `<div class="card"><h3>Голосование</h3><p class="muted">Выберите, кто шпион. Если выбрали не того — шпион побеждает.</p>
-    <div class="locationList">${players.map(p=>`<button class="button ${voted?'ghost':'secondary'}" data-action="vote-player" data-id="${p.id}" ${voted?'disabled':''}>${escapeHTML(p.avatar||'')} ${escapeHTML(p.name)} ${visible ? `<span class="tiny">· голосов: ${Object.values(votes).filter(v=>v===p.id).length}</span>`:''}</button>`).join('')}</div>
-    <div class="spacer"></div><p>Проголосовали: <b>${Object.keys(votes).length}/${players.length}</b></p>
-    ${isHost()?`<button class="button" data-action="finish-vote">Завершить голосование</button><button class="button ghost" data-action="cancel-vote">Отменить</button>`:''}
+  const r=state.room; const votes=r.votes||{}; const players=alivePlayers();
+  const visible = r.settings?.voteType === 'open'; const controls = canControlRound();
+  const canVote = players.some(p=>p.id===state.userId);
+  const myVote = votes[state.userId] || '';
+  const voteCount = players.filter(p=>votes[p.id]).length;
+  return `<div class="card"><h3>Голосование</h3><p class="muted">Выберите, кто шпион. Голос можно поменять до подведения итогов.</p>
+    ${!canVote ? `<p class="warn">Ты наблюдатель или уже выбыл, поэтому не голосуешь.</p>` : ''}
+    <div class="locationList">${players.map(p=>`<button class="button ${myVote===p.id?'ok':'secondary'}" data-action="vote-player" data-id="${p.id}" ${canVote?'':'disabled'}>${myVote===p.id?'✓ ':''}${escapeHTML(p.avatar||'')} ${escapeHTML(p.name)} ${visible ? `<span class="tiny">· голосов: ${Object.values(votes).filter(v=>v===p.id).length}</span>`:''}</button>`).join('')}</div>
+    <div class="spacer"></div><p>Проголосовали: <b>${voteCount}/${players.length}</b></p>
+    ${controls?`<button class="button" data-action="finish-vote" ${voteCount<players.length?'disabled':''}>Подвести итоги</button>${voteCount<players.length?`<button class="button ghost" data-action="force-finish-vote">Завершить досрочно</button>`:''}<button class="button ghost" data-action="cancel-vote">Отменить</button>`:''}
   </div>${chatHTML()}`;
 }
 
+function timeupScreen(){
+  const controls = canControlRound();
+  return `<div class="cardReveal"><div>
+    <div class="secretStamp">время вышло</div>
+    <div class="bigTitle">00:00</div>
+    <p class="muted">Раунд остановлен, чтобы итоги не пролетали слишком быстро и никто случайно не потерял голос.</p>
+    <div class="spacer"></div>
+    ${controls ? `<button class="button danger" data-action="start-vote">Начать голосование</button><button class="button secondary" data-action="add-minute">Добавить 1 минуту</button><button class="button ghost" data-action="continue-no-timer">Продолжить без таймера</button>` : `<p class="muted">Ждём решение ведущего.</p>`}
+  </div></div>${chatHTML()}`;
+}
+
 function resultsScreen(){
+  updateLocalStatsOnce();
   const r=state.room; const winner = r.result?.winner; const loc = r.secret?.location?.name;
   const spyNames = (r.spyIds||[]).map(id=>state.players.find(p=>p.id===id)?.name || '???').join(', ');
-  const myTeam = assignmentFor()?.team;
+  const traitorName = r.traitorId ? (state.players.find(p=>p.id===r.traitorId)?.name || '???') : '';
   return `<div class="cardReveal"><div>
     <div class="secretStamp">итог раунда</div>
     <div class="bigTitle">${winner==='spies'?'Победа шпионов':'Победа своих'}</div>
     <p>Локация: <b>${escapeHTML(loc||'—')}</b></p><p>Шпион${(r.spyIds||[]).length>1?'ы':''}: <b>${escapeHTML(spyNames)}</b></p>
+    ${traitorName ? `<p>Предатель: <b>${escapeHTML(traitorName)}</b></p>` : ''}
     <p class="muted">${escapeHTML(r.result?.reason || '')}</p>
     <div class="spacer"></div>${isHost()?`<button class="button" data-action="new-round">Новый раунд</button>`:''}<button class="button secondary" data-action="home">Домой</button>
   </div></div>${chatHTML()}`;
@@ -3527,7 +3668,7 @@ async function shareRoom(){
 
 async function createRoom(){
   if(!state.profile.name.trim()){ state.screen='profile'; render(); toast('Сначала укажи имя'); return; }
-  const c=code(); const room={ code:c, hostId:state.userId, status:'lobby', createdAt:now(), settings:roomDefaults(), currentTurnIndex:0, eliminatedSpyIds:[] };
+  const c=code(); const room={ code:c, hostId:state.userId, status:'lobby', createdAt:now(), settings:roomDefaults(), currentTurnIndex:0, eliminatedSpyIds:[], noTimer:false, result:null };
   if(state.firebase){
     await F.setDoc(F.doc(F.db,'rooms',c), room);
   }else{
@@ -3536,19 +3677,38 @@ async function createRoom(){
   await enterRoom(c);
 }
 
+async function getRoomPlayers(c){
+  if(state.firebase){
+    const snap = await F.getDocs(F.collection(F.db,'rooms',c,'players'));
+    return snap.docs.map(d=>d.data()).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0));
+  }
+  const r = state.localRooms[c];
+  return Object.values(r?.players||{}).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0));
+}
+
 async function enterRoom(c){
   c=(c||'').trim().toUpperCase();
   if(!c){ toast('Введи код комнаты'); return; }
+  if(!state.profile.name.trim()){ state.modal=null; state.screen='profile'; render(); toast('Сначала укажи имя'); return; }
   try{
     clearSubs();
     state.roomCode=c;
     let room = await readRoom(c);
     if(!room){ state.roomCode=null; toast('Комната не найдена'); return; }
-    const status = room.status==='lobby' ? 'active' : 'observer';
-    await savePlayer(c, { id:state.userId, name:state.profile.name||'Игрок', avatar:state.profile.avatar||'🕵️', status, joinedAt:now(), lastSeen:now() });
+    const existing = await getRoomPlayers(c);
+    const current = existing.find(p=>p.id===state.userId);
+    const activeCount = existing.filter(p=>p.status !== 'observer' && p.status !== 'left').length;
+    const maxPlayers = Number(room.settings?.playerMax || 15);
+    let status = room.status==='lobby' ? 'active' : 'observer';
+    if(room.status==='lobby' && !current && activeCount >= maxPlayers){
+      status = 'observer';
+      toast('Комната заполнена. Ты вошёл как наблюдатель.');
+    }
+    if(current?.status === 'observer' && room.status !== 'lobby') status = 'observer';
+    await savePlayer(c, { id:state.userId, name:state.profile.name, avatar:state.profile.avatar||'🕵️', status, joinedAt:current?.joinedAt || now(), lastSeen:now() });
     subscribe(c);
     state.modal=null;
-    state.screen = room.status==='lobby' ? 'lobby' : room.status;
+    applyRoomStatus(room);
     render();
   }catch(err){
     console.error(err);
@@ -3580,12 +3740,21 @@ async function markCardReady(){
 function clearSubs(){ state.unsub.forEach(fn=>{try{fn()}catch{}}); state.unsub=[]; }
 function subscribe(c){
   if(state.firebase){
-    state.unsub.push(F.onSnapshot(F.doc(F.db,'rooms',c), snap=>{ state.room=snap.exists()?snap.data():null; if(state.room?.status) state.screen=state.room.status==='lobby'?'lobby':state.room.status; scheduleRender(); }));
-    state.unsub.push(F.onSnapshot(F.collection(F.db,'rooms',c,'players'), snap=>{ state.players=snap.docs.map(d=>d.data()).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); scheduleRender(); }));
+    state.unsub.push(F.onSnapshot(F.doc(F.db,'rooms',c), snap=>{
+      state.room=snap.exists()?snap.data():null;
+      applyRoomStatus(state.room);
+      if(state.room?.status === 'results') updateLocalStatsOnce();
+      scheduleRender();
+    }));
+    state.unsub.push(F.onSnapshot(F.collection(F.db,'rooms',c,'players'), snap=>{
+      state.players=snap.docs.map(d=>d.data()).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0));
+      transferHostIfNeeded();
+      scheduleRender();
+    }));
     state.unsub.push(F.onSnapshot(F.query(F.collection(F.db,'rooms',c,'messages'), F.orderBy('createdAt','asc'), F.limit(80)), snap=>{ state.messages=snap.docs.map(d=>d.data()); scheduleRender(); }));
   } else subscribeLocal();
 }
-function subscribeLocal(){ const r=state.localRooms[state.roomCode]; state.room=r; state.players=Object.values(r.players||{}).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); state.messages=r.messages||[]; }
+function subscribeLocal(){ const r=state.localRooms[state.roomCode]; state.room=r; applyRoomStatus(r); state.players=Object.values(r.players||{}).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); state.messages=r.messages||[]; transferHostIfNeeded(); }
 
 async function sendChat(){
   const input=document.querySelector('#chatText'); const text=input?.value.trim(); if(!text) return;
@@ -3605,46 +3774,121 @@ async function saveRoomSettings(){
 }
 
 async function startGame(){
+  if(!isHost()){ toast('Запускать игру может только ведущий'); return; }
   await saveRoomSettings();
-  const room = await readRoom(state.roomCode); const s=room.settings||roomDefaults(); const players=activePlayers();
-  if(players.length < 3){ toast('Минимум 3 игрока'); return; }
+  const room = await readRoom(state.roomCode); let s={...(room.settings||roomDefaults())};
+  if(s.mode === 'hard'){
+    s.rolesEnabled = true;
+    s.spyFakeRole = true;
+  }
+  const allActive=activePlayers();
+  let players = s.leaderMode ? allActive.filter(p=>p.id!==state.room.hostId) : allActive;
+  if(s.leaderMode){
+    const hostPlayer = state.players.find(p=>p.id===state.room.hostId);
+    if(hostPlayer) await savePlayer(state.roomCode, {...hostPlayer, status:'observer', lastSeen:now()});
+  } else {
+    const hostPlayer = state.players.find(p=>p.id===state.room.hostId);
+    if(hostPlayer?.status==='observer') await savePlayer(state.roomCode, {...hostPlayer, status:'active', lastSeen:now()});
+  }
+  if(players.length < 3){ toast(s.leaderMode ? 'Нужно минимум 3 игрока кроме ведущего' : 'Минимум 3 игрока'); return; }
+  if(s.mode === 'traitor' && players.length < 5){ toast('Для режима «Предатель» нужно минимум 5 игроков'); return; }
   if(players.length > 15){ toast('Максимум 15 игроков'); return; }
-  const spyCount = Math.min(Math.max(1, Number(s.spyCount||1)), Math.max(1, players.length-2));
-  const pack = getPack(s.packId); const location = shuffle(pack.locations)[0]; const order = shuffle(players).map(p=>p.id); const spyIds = order.slice(0, spyCount);
+  let spyCount = Math.min(Math.max(1, Number(s.spyCount||1)), Math.max(1, players.length-2));
+  let traitorId = null;
+  const pack = getPack(s.packId); const location = shuffle(pack.locations)[0]; const order = shuffle(players).map(p=>p.id);
+  const spyIds = order.slice(0, spyCount);
+  if(s.mode === 'traitor' && players.length >= 5){
+    traitorId = order.find(id=>!spyIds.includes(id)) || null;
+  }
   const roles = shuffle(location.roles); const assignments={}; let ri=0;
   players.forEach(p=>{
     const isSpy=spyIds.includes(p.id);
-    if(isSpy){ assignments[p.id] = {team:'spy', fakeRole: s.spyFakeRole && s.rolesEnabled ? roles[ri++ % roles.length] : ''}; }
-    else { assignments[p.id] = {team:'players', location:location.name, role:s.rolesEnabled ? roles[ri++ % roles.length] : ''}; }
+    const isTraitor=traitorId===p.id;
+    if(isSpy){
+      assignments[p.id] = {team:'spy', category: (s.mode==='category' || s.mode==='hard') ? (pack.tone || pack.name) : '', fakeRole: s.spyFakeRole && s.rolesEnabled ? roles[ri++ % roles.length] : ''};
+    } else if(isTraitor){
+      assignments[p.id] = {team:'traitor', location:location.name, role:s.rolesEnabled ? roles[ri++ % roles.length] : ''};
+    } else {
+      assignments[p.id] = {team:'players', location:location.name, role:s.rolesEnabled ? roles[ri++ % roles.length] : ''};
+    }
   });
-  await updateRoom({ status:'card', secret:{location, packId:pack.id}, assignments, spyIds, order, currentTurnIndex:0, startedAt:null, cardReady:{}, eliminatedSpyIds:[], votes:{}, result:null });
+  await updateRoom({ status:'card', roundId:uid(), settings:s, secret:{location, packId:pack.id, tone:pack.tone||pack.name}, assignments, spyIds, traitorId, order, currentTurnIndex:0, startedAt:null, noTimer:false, cardReady:{}, eliminatedSpyIds:[], votes:{}, result:null, timeEndedAt:null });
   state.lastCardHidden=true; state.screen='card'; render();
 }
 
-async function processVote(){
-  const r=state.room; const votes=r.votes||{}; const players=alivePlayers();
-  if(Object.keys(votes).length < players.length && !confirm('Не все проголосовали. Завершить?')) return;
-  const tally={}; Object.values(votes).forEach(id=>tally[id]=(tally[id]||0)+1);
-  const sorted=Object.entries(tally).sort((a,b)=>b[1]-a[1]); const top=sorted[0]?.[0];
-  if(!top){ toast('Нет голосов'); return; }
-  const topVotes=sorted[0][1]; const tie=sorted.filter(x=>x[1]===topVotes).length>1;
-  if(tie){ await finishGame('spies','Ничья на голосовании. Шпионы воспользовались хаосом.'); return; }
+function buildVoteResolution(r, players, force=false){
+  const votes = r.votes || {};
+  const validVotes = {};
+  players.forEach(p=>{
+    const target = votes[p.id];
+    if(target && players.some(x=>x.id===target)) validVotes[p.id] = target;
+  });
+  if(Object.keys(validVotes).length < players.length && !force){
+    return {error:'Не все проголосовали'};
+  }
+  const tally={};
+  Object.values(validVotes).forEach(id=>tally[id]=(tally[id]||0)+1);
+  const sorted=Object.entries(tally).sort((a,b)=>b[1]-a[1]);
+  const top=sorted[0]?.[0];
+  if(!top) return {error:'Нет голосов'};
+  const topVotes=sorted[0][1];
+  const tie=sorted.filter(x=>x[1]===topVotes).length>1;
+  if(tie){
+    return {patch:{status:'results', result:{id:uid(), winner:'spies', reason:'Ничья на голосовании. Шпионы воспользовались хаосом.', endedAt:now()}}};
+  }
   const isSpy = (r.spyIds||[]).includes(top);
-  if(!isSpy){ await finishGame('spies','На голосовании выбрали не того.'); return; }
+  if(!isSpy){
+    return {patch:{status:'results', result:{id:uid(), winner:'spies', reason:'На голосовании выбрали не шпиона.', endedAt:now()}}};
+  }
   const eliminated=[...(r.eliminatedSpyIds||[]), top];
   const allFound=(r.spyIds||[]).every(id=>eliminated.includes(id));
-  if(allFound) await finishGame('players','Все шпионы вычислены.');
-  else await updateRoom({status:'play', eliminatedSpyIds:eliminated, votes:{}, currentTurnIndex:(r.currentTurnIndex||0)+1});
+  if(allFound){
+    return {patch:{status:'results', eliminatedSpyIds: eliminated, result:{id:uid(), winner:'players', reason:'Все шпионы вычислены.', endedAt:now()}}};
+  }
+  return {patch:{status:'play', eliminatedSpyIds:eliminated, votes:{}, currentTurnIndex:(r.currentTurnIndex||0)+1, timeEndedAt:null, startedAt:now(), noTimer:false}};
+}
+
+async function processVote(force=false){
+  if(!canControlRound()){ toast('Завершить голосование может ведущий'); return; }
+  const currentRoom = state.room;
+  if(!currentRoom || currentRoom.status==='results') return;
+  const players=alivePlayers();
+  const resolution = buildVoteResolution(currentRoom, players, force);
+  if(resolution.error){ toast(resolution.error); return; }
+  if(state.firebase){
+    const ref = F.doc(F.db,'rooms',state.roomCode);
+    await F.runTransaction(F.db, async (tx)=>{
+      const snap = await tx.get(ref);
+      if(!snap.exists()) return;
+      const latest = snap.data();
+      if(latest.status === 'results') return;
+      const latestResolution = buildVoteResolution(latest, players, force);
+      if(latestResolution.error) throw new Error(latestResolution.error);
+      tx.update(ref, latestResolution.patch);
+    }).catch(err=>toast(err.message || 'Не удалось завершить голосование'));
+  }else{
+    await updateRoom(resolution.patch);
+  }
 }
 async function finishGame(winner, reason){
-  await updateRoom({status:'results', result:{winner, reason, endedAt:now()}});
-  updateLocalStats(winner);
+  if(state.room?.status === 'results') return;
+  const id = uid();
+  await updateRoom({status:'results', result:{id, winner, reason, endedAt:now()}});
+  updateLocalStatsOnce(id, winner);
 }
-function updateLocalStats(winner){
-  const a=assignmentFor(); const isSpy=a?.team==='spy'; const win=(winner==='spies' && isSpy) || (winner==='players' && !isSpy);
-  state.stats.games += 1; if(win) state.stats.wins += 1; if(isSpy){ state.stats.spyGames += 1; if(win) state.stats.spyWins += 1; }
+function updateLocalStatsOnce(idArg, winnerArg){
+  const key = idArg || resultKey();
+  if(!key || state.seenResults[key]) return;
+  const winner = winnerArg || state.room?.result?.winner;
+  const a=assignmentFor(); if(!a || !winner) return;
+  const playsWithSpies = a.team==='spy' || a.team==='traitor';
+  const win=(winner==='spies' && playsWithSpies) || (winner==='players' && !playsWithSpies);
+  state.stats.games += 1; if(win) state.stats.wins += 1; if(a.team==='spy'){ state.stats.spyGames += 1; if(win) state.stats.spyWins += 1; }
+  state.seenResults[key] = true;
   saveJSON(STORAGE.stats,state.stats);
+  saveJSON(STORAGE.seenResults,state.seenResults);
 }
+
 
 function addPack(){
   const name=document.querySelector('#newPackName')?.value.trim(); const text=document.querySelector('#newPackText')?.value.trim();
@@ -3668,15 +3912,22 @@ function importPack(){
   try{ const p=JSON.parse(decodeURIComponent(escape(atob(text)))); p.id='custom_'+Date.now().toString(36); state.customPacks.push(p); saveJSON(STORAGE.packs,state.customPacks); state.modal=null; toast('Набор импортирован'); render(); }catch(e){ toast('Не получилось импортировать'); }
 }
 
-setInterval(()=>{
-  if(state.room?.status !== 'play') return;
-  const timerEl = document.querySelector('.timer');
-  if(!timerEl){ scheduleRender(); return; }
+setInterval(async ()=>{
+  if(state.room?.status !== 'play' || state.room?.noTimer) return;
   const s = state.room.settings || {};
   const remain = Math.max(0, Math.floor(((state.room.startedAt||now()) + (s.duration||420)*1000 - now())/1000));
-  const m = String(Math.floor(remain/60)).padStart(2,'0');
-  const sec = String(remain%60).padStart(2,'0');
-  timerEl.textContent = `${m}:${sec}`;
+  const timerEl = document.querySelector('.timer');
+  if(timerEl){
+    const m = String(Math.floor(remain/60)).padStart(2,'0');
+    const sec = String(remain%60).padStart(2,'0');
+    timerEl.textContent = `${m}:${sec}`;
+  }
+  if(remain <= 0 && !state.timerEnding && isRoomController()){
+    state.timerEnding = true;
+    try{ signalTimeUp({...state.room, timeEndedAt:now()}); await updateRoom({status:'timeup', timeEndedAt:now()}); }
+    catch(e){ console.error(e); }
+    setTimeout(()=>state.timerEnding=false, 2500);
+  }
 }, 1000);
 setInterval(heartbeat, 10000);
 
@@ -3684,17 +3935,18 @@ async function heartbeat(){
   if(!state.roomCode || !state.profile.name || !state.room) return;
   const current = state.players.find(p=>p.id===state.userId);
   await savePlayer(state.roomCode, { id:state.userId, name:state.profile.name, avatar:state.profile.avatar||'🕵️', status:current?.status || 'active', joinedAt:current?.joinedAt || now(), lastSeen:now() });
-  if(isHost()) await markStalePlayers();
+  await markStalePlayers();
+  transferHostIfNeeded();
 }
 
 async function markStalePlayers(){
-  if(!['card','play','vote'].includes(state.room?.status)) return;
+  if(!['lobby','card','play','vote','timeup'].includes(state.room?.status)) return;
   const cutoff = now() - 45000;
-  const stale = state.players.filter(p=>p.id!==state.userId && p.status==='active' && p.lastSeen && p.lastSeen < cutoff);
+  const stale = state.players.filter(p=>p.id!==state.userId && p.status!=='left' && p.lastSeen && p.lastSeen < cutoff);
   for(const p of stale){ await savePlayer(state.roomCode, {...p, status:'left'}); }
   const freshPlayers = state.players.map(p => stale.find(x=>x.id===p.id) ? {...p, status:'left'} : p);
   const leftSpies = (state.room.spyIds||[]).filter(id => freshPlayers.find(p=>p.id===id)?.status==='left');
-  if(leftSpies.length && (state.room.spyIds||[]).every(id=>leftSpies.includes(id))){
+  if(leftSpies.length && (state.room.spyIds||[]).every(id=>leftSpies.includes(id)) && state.room.status !== 'results'){
     await finishGame('players','Все шпионы вышли из игры.');
   }
 }
@@ -3727,25 +3979,30 @@ document.addEventListener('click', async (e)=>{
     await markCardReady();
     toast('Ты готов');
   }
-  if(a==='hide-card'){ state.lastCardHidden=true; render(); }
-  if(a==='card'){ state.screen='card'; state.lastCardHidden=true; render(); }
+  if(a==='hide-card'){ state.lastCardHidden=true; if(state.room?.status !== 'card'){ state.screen=screenForStatus(state.cardReturnTo||state.room?.status||'play'); } render(); }
+  if(a==='return-card' || a==='go-room-status'){ state.lastCardHidden=true; state.screen=screenForStatus(state.cardReturnTo || state.room?.status || 'lobby'); render(); }
+  if(a==='card'){ state.cardReturnTo = state.room?.status || 'play'; state.screen='card'; state.lastCardHidden=true; render(); }
   if(a==='go-play'){
     if(!isHost()){ toast('Начать раунд может ведущий'); return; }
     if(!everybodyCardReady()){ toast('Ещё не все игроки готовы'); return; }
     await updateRoom({status:'play', startedAt:now()}); state.screen='play'; render();
   }
-  if(a==='next-turn'){ await updateRoom({currentTurnIndex:(state.room.currentTurnIndex||0)+1}); }
-  if(a==='start-vote'){ await updateRoom({status:'vote', votes:{}}); }
-  if(a==='cancel-vote'){ await updateRoom({status:'play', votes:{}}); }
-  if(a==='vote-player'){ await updateRoom({votes:{...(state.room.votes||{}), [state.userId]:el.dataset.id}}); }
-  if(a==='finish-vote') await processVote();
+  if(a==='next-turn'){ if(!canControlRound()){ toast('Ход переключает ведущий'); return; } await updateRoom({currentTurnIndex:(state.room.currentTurnIndex||0)+1}); }
+  if(a==='start-vote'){ if(!canControlRound()){ toast('Голосование запускает ведущий'); return; } await updateRoom({status:'vote', votes:{}, timeEndedAt:null}); }
+  if(a==='cancel-vote'){ if(!canControlRound()){ toast('Отменить может ведущий'); return; } await updateRoom({status:'play', votes:{}}); }
+  if(a==='vote-player'){ const players=alivePlayers(); if(!players.some(p=>p.id===state.userId)){ toast('Ты не участвуешь в голосовании'); return; } if(!players.some(p=>p.id===el.dataset.id)){ toast('Игрок уже не участвует'); return; } if(state.firebase){ await F.updateDoc(F.doc(F.db,'rooms',state.roomCode), {['votes.'+state.userId]: el.dataset.id}); } else { await updateRoom({votes:{...(state.room.votes||{}), [state.userId]:el.dataset.id}}); } }
+  if(a==='finish-vote') await processVote(false);
+  if(a==='force-finish-vote') await processVote(true);
+  if(a==='add-minute'){ if(!canControlRound()) return; const s=state.room.settings||{}; await updateRoom({status:'play', noTimer:false, startedAt: now() - (Number(s.duration||420)*1000) + 60000, timeEndedAt:null}); }
+  if(a==='continue-no-timer'){ if(!canControlRound()) return; await updateRoom({status:'play', noTimer:true, timeEndedAt:null}); }
   if(a==='guess-modal'){ state.modal='guess'; render(); }
   if(a==='spy-guess'){
     const guess=el.dataset.location; const real=state.room.secret.location.name;
+    if(assignmentFor()?.team !== 'spy'){ toast('Угадывать может только шпион'); return; }
     state.modal=null; await finishGame(guess===real?'spies':'players', guess===real?'Шпион угадал локацию.':'Шпион ошибся с локацией.');
   }
   if(a==='send-chat') await sendChat();
-  if(a==='new-round'){ await updateRoom({status:'lobby', assignments:null, spyIds:[], secret:null, result:null, votes:{}, cardReady:{}, eliminatedSpyIds:[]}); }
+  if(a==='new-round'){ if(!isHost()) return; if(state.room?.result?.endedAt && now()-state.room.result.endedAt < 3000){ toast('Итоги показываются минимум несколько секунд'); return; } await updateRoom({status:'lobby', roundId:null, assignments:null, spyIds:[], traitorId:null, secret:null, result:null, votes:{}, cardReady:{}, eliminatedSpyIds:[], startedAt:null, noTimer:false, timeEndedAt:null}); }
   if(a==='view-pack'){ state.modal='pack:'+el.dataset.pack; render(); }
   if(a==='add-pack') addPack();
   if(a==='share-pack') exportPack(el.dataset.pack);
