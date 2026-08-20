@@ -3164,6 +3164,8 @@ const state = {
   timerEnding:false,
   voteAutoEnding:false,
   chatDraft:'',
+  chatFocused:false,
+  pendingRenderAfterChat:false,
   modal:null,
   currentGuess:'',
   localRooms: loadJSON('spy-own-local-rooms', {}),
@@ -3188,8 +3190,12 @@ function scheduleRender(){
 function paint(html){
   if(html === lastRenderedHTML) return;
   const sameScreen = state.screen === state._paintScreen;
-  const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
   const activeId = document.activeElement?.id || '';
+  if(sameScreen && activeId === 'chatText' && state.chatFocused){
+    state.pendingRenderAfterChat = true;
+    return;
+  }
+  const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
   const activeValue = document.activeElement && ['INPUT','TEXTAREA'].includes(document.activeElement.tagName) ? document.activeElement.value : null;
   app.innerHTML = html;
   lastRenderedHTML = html;
@@ -3431,7 +3437,7 @@ function homeScreen(){
   <div class="spacer"></div>
   <div class="grid3">
     <div class="card"><h3>10 наборов</h3><p>По 30 локаций и 5 ролей в каждой. Можно добавлять свои наборы.</p></div>
-    <div class="card"><h3>Гибкие правила</h3><p>Шпионы, роли, фейковая роль, таймер, голосование и режим ведущего.</p></div>
+    <div class="card"><h3>Гибкие правила</h3><p>Шпионы, роли, скрытая фейковая карта, таймер, голосование и режим ведущего.</p></div>
     <div class="card"><h3>Профиль</h3><p>Имя, аватар, локальная статистика и история побед на устройстве.</p></div>
   </div>`;
 }
@@ -3453,7 +3459,7 @@ function profileScreen(){
 function rulesScreen(){
   return `<div class="stack">
     <div class="card"><h3>Правила</h3>
-      <p>Все игроки, кроме шпионов, знают локацию. Если роли включены, каждый получает ещё роль. Шпион видит только статус шпиона, а в отдельном режиме может получить фейковую роль.</p>
+      <p>Все игроки, кроме шпионов, знают локацию. Если роли включены, каждый получает ещё роль. Шпион обычно видит статус шпиона. Если включена «фейковая роль шпиону», его карта выглядит как обычная: он получает ложную локацию и роль, поэтому не понимает сразу, что он шпион.</p>
       <div class="divider"></div>
       <p><b>Ход:</b> сначала каждый смотрит свою карту и нажимает «Я готов». Раунд можно начать только после готовности всех активных игроков. Первый игрок выбирается случайно, дальше вопросы идут по кругу. Нельзя называть локацию напрямую.</p>
       <p><b>Победа обычных игроков:</b> на голосовании вычислили всех шпионов.</p>
@@ -3517,7 +3523,7 @@ function lobbyScreen(){
       ${selectHTML('packId','Набор', allPacks().map(p=>[p.id,p.name]), s.packId)}
       ${selectHTML('spyCount','Шпионов', [[1,'1'],[2,'2'],[3,'3']], s.spyCount)}
       ${selectHTML('rolesEnabled','Роли', [['true','включены'],['false','выключены']], String(s.rolesEnabled))}
-      ${selectHTML('spyFakeRole','Фейковая роль шпиону', [['false','нет'],['true','да']], String(s.spyFakeRole))}
+      ${selectHTML('spyFakeRole','Скрытая фейковая карта шпиона', [['false','нет'],['true','да']], String(s.spyFakeRole))}
       ${selectHTML('duration','Время', [[180,'3 минуты'],[300,'5 минут'],[420,'7 минут'],[600,'10 минут'],[900,'15 минут']], s.duration)}
       ${selectHTML('voteType','Голосование', [['secret','тайное'],['open','открытое']], s.voteType)}
       ${selectHTML('leaderMode','Режим ведущего', [['false','нет'],['true','да']], String(s.leaderMode))}
@@ -3530,12 +3536,54 @@ function lobbyScreen(){
     <div class="card"><h3>Код комнаты</h3><div class="code">${escapeHTML(state.roomCode)}</div>${qrHTML()}<div class="spacer"></div><button class="button secondary" data-action="copy-code">Скопировать код</button><button class="button secondary" data-action="share-room">Поделиться</button><button class="button ghost" data-action="leave-room">Выйти</button><p class="tiny">Игроки вводят код на главном экране, переходят по ссылке или сканируют QR. После старта новые игроки станут наблюдателями.</p></div>
     <div class="card"><h3>Игроки ${activePlayers().length}/${s.playerMax}</h3><div class="players">${playerCards}</div></div>
     ${hostSettings}
+    ${modeInfoHTML(s)}
     ${chatHTML()}
   </div>`;
 }
 
 function selectHTML(id,label,opts,value){
   return `<div><label>${label}</label><select id="${id}">${opts.map(([v,t])=>`<option value="${v}" ${String(v)===String(value)?'selected':''}>${escapeHTML(t)}</option>`).join('')}</select></div>`;
+}
+
+const HARD_PACK_IDS = ['elite','danger','night','survival','horror_mystic'];
+function normalizeSettingsForMode(raw){
+  const s = {...roomDefaults(), ...(raw||{})};
+  s.spyCount = Math.max(1, Math.min(3, Number(s.spyCount || 1)));
+  s.duration = Number(s.duration || 420);
+  s.playerMax = 15;
+  if(s.mode === 'hard'){
+    s.rolesEnabled = true;
+    s.spyFakeRole = true;
+    s.voteType = 'secret';
+    s.duration = Math.min(s.duration, 420);
+    if(!String(s.packId||'').startsWith('custom_') && !HARD_PACK_IDS.includes(s.packId)) s.packId = HARD_PACK_IDS[Math.floor(Math.random()*HARD_PACK_IDS.length)];
+  }
+  if(s.mode === 'traitor'){
+    s.rolesEnabled = true;
+    s.voteType = 'secret';
+  }
+  if(s.mode === 'category'){
+    s.rolesEnabled = true;
+  }
+  if(s.spyFakeRole){
+    s.rolesEnabled = true;
+  }
+  return s;
+}
+function modeInfoHTML(settings){
+  const s = normalizeSettingsForMode(settings);
+  const lines = {
+    classic: ['Классический режим', 'Шпион знает, что он шпион, но не знает локацию. Настройки ролей и голосования работают как выбрал ведущий.'],
+    hard: ['Сложный режим', 'Автоматически включает роли, скрытую фейковую карту шпиона, тайное голосование, ограничивает раунд 7 минутами и выбирает один из сложных тематических наборов, если выбран слишком простой.'],
+    traitor: ['Режим «Предатель»', 'Добавляет предателя: он знает настоящую локацию и роль, но побеждает вместе со шпионами. Число шпионов ограничивается, чтобы у мирных оставался шанс.'],
+    category: ['Режим «Шпион знает категорию»', 'Шпион не знает точную локацию, но получает общую тему набора. Если включена фейковая роль, карта шпиона остаётся скрытой и выглядит как обычная.']
+  };
+  const [title, text] = lines[s.mode] || lines.classic;
+  const forced = [];
+  if(s.mode === 'hard') forced.push('роли включены', 'фейковая карта шпиона', 'тайное голосование', 'до 7 минут');
+  if(s.mode === 'traitor') forced.push('предатель', 'тайное голосование', 'роли включены');
+  if(s.spyFakeRole) forced.push('шпион получает ложную карту');
+  return `<div class="card"><h3>${title}</h3><p>${text}</p>${forced.length ? `<div class="spacer"></div><p class="tiny">Активно: ${escapeHTML(forced.join(' · '))}</p>` : ''}</div>`;
 }
 
 function cardScreen(){
@@ -3558,9 +3606,12 @@ function cardScreen(){
   }
   const isSpy = a.team === 'spy';
   const isTraitor = a.team === 'traitor';
-  const title = isSpy ? 'ШПИОН' : isTraitor ? 'ПРЕДАТЕЛЬ' : escapeHTML(a.location);
-  const stamp = isSpy ? 'ты шпион' : isTraitor ? 'ты предатель' : 'ты свой';
-  const spyHint = isSpy && a.category ? `<p class="warn">Категория: <b>${escapeHTML(a.category)}</b></p>` : '';
+  const hiddenSpy = isSpy && a.hiddenSpy;
+  const title = hiddenSpy ? escapeHTML(a.fakeLocation || a.location || 'Локация') : isSpy ? 'ШПИОН' : isTraitor ? 'ПРЕДАТЕЛЬ' : escapeHTML(a.location);
+  const stamp = hiddenSpy ? 'ты свой' : isSpy ? 'ты шпион' : isTraitor ? 'ты предатель' : 'ты свой';
+  const shownRole = hiddenSpy ? (a.fakeRole || a.role || '') : (a.role || '');
+  const spyHint = isSpy && !hiddenSpy && a.category ? `<p class="warn">Категория: <b>${escapeHTML(a.category)}</b></p>` : '';
+  const hiddenHint = hiddenSpy ? `<p class="tiny">Карта выглядит как обычная. Играй по роли и отвечай осторожно.</p>` : '';
   const traitorHint = isTraitor ? `<p class="warn">Ты знаешь локацию, но побеждаешь вместе со шпионами. Запутывай мирных осторожно.</p>` : '';
   const readyBlock = iAmReady
     ? `<p class="oktext"><b>Ты готов.</b> Готовы: ${readyCount}/${players.length}</p>`
@@ -3571,9 +3622,10 @@ function cardScreen(){
   return `<div class="cardReveal"><div>
     <div class="secretStamp">${stamp}</div>
     <div class="bigTitle">${title}</div>
-    <p class="muted">${a.role ? `Роль: <b>${escapeHTML(a.role)}</b>` : (s.rolesEnabled ? 'Роль не используется' : 'Раунд без ролей')}</p>
+    <p class="muted">${shownRole ? `Роль: <b>${escapeHTML(shownRole)}</b>` : (s.rolesEnabled ? 'Роль не используется' : 'Раунд без ролей')}</p>
     ${spyHint}
-    ${isSpy && a.fakeRole ? `<p class="warn">Фейковая роль: <b>${escapeHTML(a.fakeRole)}</b></p>` : ''}
+    ${hiddenHint}
+    ${isSpy && !hiddenSpy && a.fakeRole ? `<p class="warn">Фейковая роль: <b>${escapeHTML(a.fakeRole)}</b></p>` : ''}
     ${traitorHint}
     <div class="spacer"></div>${readyBlock}
     <div class="spacer"></div>${startBlock}
@@ -3595,8 +3647,10 @@ function playScreen(){
       ${chatHTML()}
     </div>`;
   }
+  const hiddenSpyMode = !!s.spyFakeRole;
+  const showGuessButton = hiddenSpyMode ? !!me() && isActiveParticipant(me()) : canUseSpyGuess();
   return `<div class="grid">
-    <div class="card"><h3>Раунд идёт</h3><div class="timer">${timerText}</div><p class="muted">Первый игрок выбран случайно. Дальше вопросы идут по кругу.</p><div class="spacer"></div><button class="button secondary" data-action="card">Моя карта</button>${canUseSpyGuess() ? `<button class="button" data-action="guess-modal">Я знаю локацию</button>`:''}</div>
+    <div class="card"><h3>Раунд идёт</h3><div class="timer">${timerText}</div><p class="muted">Первый игрок выбран случайно. Дальше вопросы идут по кругу.</p><div class="spacer"></div><button class="button secondary" data-action="card">Моя карта</button>${showGuessButton ? `<button class="button" data-action="guess-modal">${hiddenSpyMode ? 'Назвать локацию' : 'Я знаю локацию'}</button>`:''}</div>
     <div class="turnBox"><h3>Сейчас спрашивает</h3><div class="bigTitle" style="font-size:28px">${current ? escapeHTML(current.avatar||'') + ' ' + escapeHTML(current.name) : '—'}</div>${controls?`<button class="button secondary" data-action="next-turn">Следующий по кругу</button>`:`<p class="tiny">Ход переключает ведущий.</p>`}</div>
     <div class="card"><h3>Игроки</h3><div class="players">${state.players.filter(p=>p.status!=='left').map(p=>`<div class="player"><span class="dot ${p.status==='observer' || eliminated.includes(p.id) ? 'obs':''}"></span><div><b>${escapeHTML(p.avatar||'')} ${escapeHTML(p.name)}</b><div class="tiny">${eliminated.includes(p.id)?'вычисленный шпион':p.status==='observer'?'наблюдатель':'в игре'}</div></div></div>`).join('')}</div></div>
     <div class="card"><h3>Голосование</h3><p>Голосование может начать только ведущий или условный ведущий.</p><div class="spacer"></div>${controls?`<button class="button danger" data-action="start-vote">Начать голосование</button>`:`<p class="muted">Голосование запускает ведущий.</p>`}</div>
@@ -3664,7 +3718,8 @@ function modalHTML(){
   if(state.modal === 'join') return `<div class="modal" data-action="close-modal"><div class="modalInner"><h3>Войти в комнату</h3><label>Код комнаты</label><input class="input" id="joinCode" placeholder="Например, A7K2Q" maxlength="8" autocomplete="off"><div class="spacer"></div><button class="button" data-action="join-room">Войти</button><button class="button ghost" data-action="close-modal">Закрыть</button></div></div>`;
   if(state.modal === 'guess'){
     const pack = getPack(state.room?.settings?.packId);
-    return `<div class="modal"><div class="modalInner"><h3>Назови локацию</h3><p class="muted">Если угадаешь — шпионы победят. Если ошибёшься — победят свои.</p><div class="locationList">${pack.locations.map(l=>`<button class="button secondary" data-action="spy-guess" data-location="${escapeHTML(l.name)}">${escapeHTML(l.name)}</button>`).join('')}</div><div class="spacer"></div><button class="button ghost" data-action="close-modal">Закрыть</button></div></div>`;
+    const hiddenSpyMode = !!state.room?.settings?.spyFakeRole;
+    return `<div class="modal"><div class="modalInner"><h3>Назови локацию</h3><p class="muted">${hiddenSpyMode ? 'В режиме фейковой роли эта кнопка видна всем, чтобы шпион не вычислял себя по интерфейсу. Завершить игру угадыванием может только настоящий активный шпион.' : 'Если угадаешь — шпионы победят. Если ошибёшься — победят свои.'}</p><div class="locationList">${pack.locations.map(l=>`<button class="button secondary" data-action="spy-guess" data-location="${escapeHTML(l.name)}">${escapeHTML(l.name)}</button>`).join('')}</div><div class="spacer"></div><button class="button ghost" data-action="close-modal">Закрыть</button></div></div>`;
   }
   if(state.modal?.startsWith('pack:')){
     const id=state.modal.split(':')[1]; const p=getPack(id);
@@ -3802,26 +3857,18 @@ async function sendChat(){
 async function saveRoomSettings(){
   if(!isHost()) return;
   const val = id => document.querySelector('#'+id)?.value;
-  const s = {
+  let s = {
     packId:val('packId'), spyCount:Number(val('spyCount')), rolesEnabled:val('rolesEnabled')==='true', spyFakeRole:val('spyFakeRole')==='true',
     duration:Number(val('duration')), voteType:val('voteType'), leaderMode:val('leaderMode')==='true', mode:val('mode'), playerMin:3, playerMax:15, allowNoRoles:true
   };
+  s = normalizeSettingsForMode(s);
   await updateRoom({settings:s}); toast('Настройки сохранены');
 }
 
 async function startGame(){
   if(!isHost()){ toast('Запускать игру может только ведущий'); return; }
   await saveRoomSettings();
-  const room = await readRoom(state.roomCode); let s={...(room.settings||roomDefaults())};
-  if(s.mode === 'hard'){
-    s.rolesEnabled = true;
-    s.spyFakeRole = true;
-    s.voteType = 'secret';
-    s.duration = Math.min(Number(s.duration||420), 420);
-  }
-  if(s.mode === 'category'){
-    s.spyFakeRole = s.spyFakeRole && s.rolesEnabled;
-  }
+  const room = await readRoom(state.roomCode); let s=normalizeSettingsForMode(room.settings||roomDefaults());
   const allActive=activePlayers();
   let players = s.leaderMode ? allActive.filter(p=>p.id!==state.room.hostId) : allActive;
   if(s.leaderMode){
@@ -3842,16 +3889,29 @@ async function startGame(){
   if(s.mode === 'traitor' && players.length >= 5){
     traitorId = order.find(id=>!spyIds.includes(id)) || null;
   }
-  const roles = shuffle(location.roles); const assignments={}; let ri=0;
+  const roles = shuffle(location.roles); const assignments={}; let ri=0; const usedRoles=new Set();
+  function nextRole(list=roles){
+    const source = (list && list.length ? list : roles);
+    const fresh = source.find(role=>!usedRoles.has(role));
+    const role = fresh || source[ri++ % source.length] || 'участник';
+    usedRoles.add(role);
+    return role;
+  }
   players.forEach(p=>{
     const isSpy=spyIds.includes(p.id);
     const isTraitor=traitorId===p.id;
     if(isSpy){
-      assignments[p.id] = {team:'spy', category: (s.mode==='category' || s.mode==='hard') ? (pack.tone || pack.name) : '', fakeRole: s.spyFakeRole && s.rolesEnabled ? roles[ri++ % roles.length] : ''};
+      if(s.spyFakeRole && s.rolesEnabled){
+        const fakeLocationObj = shuffle(pack.locations.filter(l=>l.name!==location.name))[0] || location;
+        const fakeRole = nextRole(shuffle(fakeLocationObj.roles || roles));
+        assignments[p.id] = {team:'spy', hiddenSpy:true, location:fakeLocationObj.name, role:fakeRole, fakeLocation:fakeLocationObj.name, fakeRole, category:''};
+      } else {
+        assignments[p.id] = {team:'spy', category: (s.mode==='category' || s.mode==='hard') ? (pack.tone || pack.name) : '', fakeRole:''};
+      }
     } else if(isTraitor){
-      assignments[p.id] = {team:'traitor', location:location.name, role:s.rolesEnabled ? roles[ri++ % roles.length] : ''};
+      assignments[p.id] = {team:'traitor', location:location.name, role:s.rolesEnabled ? nextRole(roles) : ''};
     } else {
-      assignments[p.id] = {team:'players', location:location.name, role:s.rolesEnabled ? roles[ri++ % roles.length] : ''};
+      assignments[p.id] = {team:'players', location:location.name, role:s.rolesEnabled ? nextRole(roles) : ''};
     }
   });
   await updateRoom({ status:'card', roundId:uid(), settings:s, secret:{location, packId:pack.id, tone:pack.tone||pack.name}, assignments, spyIds, traitorId, order, currentTurnIndex:0, startedAt:null, noTimer:false, cardReady:{}, eliminatedSpyIds:[], votes:{}, voteStartedAt:null, voteDuration:30, result:null, timeEndedAt:null });
@@ -4016,6 +4076,22 @@ async function markStalePlayers(){
 
 document.addEventListener('input', (e)=>{
   if(e.target?.id === 'chatText') state.chatDraft = e.target.value;
+});
+
+document.addEventListener('focusin', (e)=>{
+  if(e.target?.id === 'chatText') state.chatFocused = true;
+});
+document.addEventListener('focusout', (e)=>{
+  if(e.target?.id === 'chatText'){
+    setTimeout(()=>{
+      state.chatFocused = document.activeElement?.id === 'chatText';
+      if(!state.chatFocused && state.pendingRenderAfterChat){
+        state.pendingRenderAfterChat = false;
+        lastRenderedHTML = '';
+        scheduleRender();
+      }
+    }, 60);
+  }
 });
 
 document.addEventListener('keydown', async (e)=>{
